@@ -1,14 +1,16 @@
 import Swiper from 'swiper';
-import { /* Navigation, */ Pagination, Autoplay } from 'swiper/modules';
+import { /* Navigation, */ Pagination, Autoplay, EffectFade } from 'swiper/modules';
 // import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
+import 'swiper/css/effect-fade';
 
 
 export function initHeroSlider() {
   const heroSwiper = new Swiper('.hero__swiper', {
-    modules: [Autoplay, Pagination],
+    modules: [Autoplay, Pagination, EffectFade],
     loop: true,
     autoHeight: true,
     speed: 1500,
@@ -29,8 +31,11 @@ export function initHeroSlider() {
     },
     pagination: {
       el: '.swiper-slide-active .hero__pagination',
-      type: 'bullets',
       clickable: true,
+      watchSlidesProgress: true,
+      renderBullet: function (index, className) {
+        return `<button class="${className}" aria-label="Перейти к слайду ${index + 1}" tabindex="0"></button>`;
+      },
     },
     on: {
       slideChangeTransitionStart: function () {
@@ -42,23 +47,6 @@ export function initHeroSlider() {
   });
   return heroSwiper;
 }
-
-/* const paginationBullets = document.querySelectorAll('.hero__pagination-bullet');
-
-paginationBullets.forEach((bullet, index) => {
-  bullet.addEventListener('keydown', (event) => {
-    if (event.code === 'Tab') {
-      event.preventDefault();
-      const nextBullet = paginationBullets[(index + 1) % paginationBullets.length];
-      nextBullet.focus();
-    } else if (event.code === 'Enter' || event.code === 'Space') {
-      event.preventDefault();
-      heroSwiper.slideTo(index);
-    }
-  });
-}); */
-
-
 /*
 export function initToursSlider() {
   const toursSlider = new Swiper('.tours__swiper', {
