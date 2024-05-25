@@ -1,31 +1,255 @@
 <!DOCTYPE html>
 <html lang="ru" data-validate="html">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUPERGYM</title>
-    <link rel="stylesheet" href="sass/style.scss">
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Стажировка — проект для получения опыта зарубежом.">
+  <title>Internship</title>
+  <link rel="preload" href="fonts/manrope-light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/manrope-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/manrope-regular-font.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
+  <link rel="stylesheet" href="sass/style.scss">
+</head>
 
-  <body class="page-body">
-    <!-- пример использования спрайта -->
-    <img src="/__spritemap#sprite-logo-view" alt="Это спрайт">
-    <svg>
-      <use href="/__spritemap#sprite-user"></use>
-    </svg>
-    <!-- примеры требуемых атрибутов data-test="*" -->
-    <div data-test="hero">hero</div>
-    <div data-test="about">about</div>
-    <div data-test="programs">programs</div>
-    <div data-test="grant">grant</div>
-    <div data-test="news">news</div>
-    <div data-test="FAQ">FAQ</div>
-    <div data-test="reviews">reviews</div>
-    <div data-test="contacts">contacts</div>
-    <div data-test="form">form</div>
+<body class="body">
+  <div class="wrapper">
+
+    <h1 class="visually-hidden">Стажировка — проект для получения опыта зарубежом.</h1>
+
+    <header class="header" id="header">
+
+      <nav class="header__nav nav nav--closed" aria-label="Главное меню навигации">
+
+        <a class="nav__logo logo" href="#" aria-current="page">
+          <picture>
+            <img src="img/logo.svg#mobile" width="30" height="30" alt="Логотип компании Стажировка.">
+          </picture>
+        </a>
+
+        <button class="nav__toggle button-reset" type="button">
+          <span>Меню</span>
+          <div class="nav__toggle-icon">
+            <span class="visually-hidden">Открыть/закрыть меню.</span>
+          </div>
+
+        </button>
+
+        <ul class="nav__list list-reset">
+
+          <li class="nav__item">
+            <a class="nav__link link-reset" href="#">О проекте</a>
+          </li>
+          <li class="nav__item  nav__item--closed">
+            <a class="nav__link nav__link--icon link-reset" href="#">Программы</a>
+            <ul class="nav__sub-list list-reset">
+              <li class="nav__sub-item">
+                <a class="nav__sub-link nav__sub-link--current link-reset" href="#">Стажировки</a>
+              </li>
+              <li class="nav__sub-item">
+                <a class="nav__sub-link link-reset" href="#">Волонтёрство</a>
+              </li>
+              <li class="nav__sub-item">
+                <a class="nav__sub-link link-reset" href="#">Учёба</a>
+              </li>
+              <li class="nav__sub-item">
+                <a class="nav__sub-link link-reset" href="#">Религия</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link link-reset" href="#">Как поехать</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link link-reset" href="#">Отзывы</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__link--icon link-reset" href="#">Новости</a>
+            <ul class="nav__sub-list list-reset">
+              <li class="nav__sub-item">
+                <a class="nav__sub-link link-reset" href="#">Стажировки</a>
+              </li>
+              <li class="nav__sub-item">
+                <a class="nav__sub-link link-reset" href="#">Волонтёрство</a>
+              </li>
+              <li class="nav__sub-item">
+                <a class="nav__sub-link link-reset" href="#">Учёба</a>
+              </li>
+              <li class="nav__sub-item">
+                <a class="nav__sub-link link-reset" href="#">Религия</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link link-reset" href="#">Контакты</a>
+          </li>
+        </ul>
+
+      </nav>
+
+    </header>
+
+    <main class="main-content">
+      <section class="hero" id="hero" data-test="hero">
+
+        <h2 class="visually-hidden">Наши зарубежные стажировки.</h2>
+
+        <div class="hero__container">
+
+          <div class="hero__swiper swiper">
+
+            <ul class="hero__list list-reset swiper-wrapper">
+
+              <li class="hero__item hero__item--experience swiper-slide" tabindex="0">
+
+                <div class="hero__item-wrapper">
+
+                  <div class="hero__pagination-wrapper">
+                    <div class="hero__pagination swiper-pagination">
+                      <button class="hero__pagination-bullet  swiper-pagination-bullet swiper-pagination-bullet-active" aria-current="true" type="button" tabindex="0">
+                        <span class="visually-hidden">Перейти к первому слайду.</span>
+                      </button>
+                      <button class="hero__pagination-bullet swiper-pagination-bullet" type="button" tabindex="-1">
+                        <span class="visualy-hidden">Перейти ко второму слайду.</span>
+                      </button>
+                      <button class="hero__pagination-bullet swiper-pagination-bullet" type="button" tabindex="-1">
+                        <span class="visualy-hidden">Перейти к третьему слайду.</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <h3 class="hero__title">Глобальный профессиональный опыт обучения
+                    за рубежом</h3>
+
+                  <div class="hero__item-content">
+                    <p>Погрузитесь в академическую программу, проходя практику в&nbsp;разных городах, ощущая настоящий студенческий стиль жизни!</p>
+
+                    <div class="hero__button-wrapper">
+                      <a class="hero__button button" href="#form">
+                        <span>Подробнее</span>
+                        <span class="button__icon">
+                          <svg width="10" height="10" viewBox="0 0 10 10" role="img" aria-hidden="true" focusable="false">
+                            <use href="/__spritemap#sprite-button-arrow"></use>
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+
+                </div>
+              </li>
+
+              <li class="hero__item hero__item--volunteers swiper-slide" tabindex="0">
+
+                <div class="hero__item-wrapper">
+
+                  <div class="hero__pagination-wrapper">
+                    <div class="hero__pagination swiper-pagination">
+                      <button class="hero__pagination-bullet swiper-pagination-bullet swiper-pagination-bullet-active" aria-current="true" type="button" tabindex="0">
+                        <span class="visually-hidden">Перейти к первому слайду.</span>
+                      </button>
+                      <button class="hero__pagination-bullet swiper-pagination-bullet" type="button" tabindex="-1">
+                        <span class="visualy-hidden">Перейти ко второму слайду.</span>
+                      </button>
+                      <button class="hero__pagination-bullet swiper-pagination-bullet" type="button" tabindex="-1">
+                        <span class="visualy-hidden">Перейти к третьему слайду.</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <h3 class="hero__title">Волонтёрские программы — внесите свой вклад в общество</h3>
+
+                  <div class="hero__item-content">
+                    <p>Возможности для преподавания, органического сельского хозяйства, устойчивого образа жизни и другое.</p>
+
+                    <div class="hero__button-wrapper">
+                      <a class="hero__button button" href="#form">
+                        <span>Подробнее</span>
+                        <span class="button__icon">
+                          <svg width="10" height="10" viewBox="0 0 10 10" role="img" aria-hidden="true" focusable="false">
+                            <use href="/__spritemap#sprite-button-arrow"></use>
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+
+                </div>
+              </li>
+
+              <li class="hero__item hero__item--company swiper-slide" tabindex="0">
+
+                <div class="hero__item-wrapper">
+
+                  <div class="hero__pagination-wrapper">
+                    <div class="hero__pagination swiper-pagination">
+                      <button class="hero__pagination-bullet swiper-pagination-bullet swiper-pagination-bullet-active" aria-current="true" type="button" tabindex="0">
+                        <span class="visually-hidden">Перейти к первому слайду.</span>
+                      </button>
+                      <button class="hero__pagination-bullet swiper-pagination-bullet" type="button" tabindex="-1">
+                        <span class="visualy-hidden">Перейти ко второму слайду.</span>
+                      </button>
+                      <button class="hero__pagination-bullet swiper-pagination-bullet" type="button" tabindex="-1">
+                        <span class="visualy-hidden">Перейти к третьему слайду.</span>
+                      </button>
+                    </div>
+
+                  </div>
+
+                  <h3 class="hero__title">Программы стажировок в крупнейших компаниях мира</h3>
+
+                  <div class="hero__item-content">
+                    <p>Получите незаменимый опыт работы в ведущих мировых компаниях и государственных организациях.</p>
+
+                    <div class="hero__button-wrapper">
+                      <a class="hero__button button" href="#form">
+                        <span>Подробнее</span>
+                        <span class="button__icon">
+                          <svg width="10" height="10" viewBox="0 0 10 10" role="img" aria-hidden="true" focusable="false">
+                            <use href="/__spritemap#sprite-button-arrow"></use>
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+
+                  </div>
+
+                </div>
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <div data-test="about">about</div>
+      <div data-test="programs">programs</div>
+      <div data-test="grant">grant</div>
+      <div data-test="news">news</div>
+      <div data-test="FAQ">FAQ</div>
+      <div data-test="reviews">reviews</div>
+      <div data-test="contacts">contacts</div>
+      <div data-test="form">form</div>
+
+    </main>
+
     <div data-test="footer">footer</div>
-    <script type="module" src="js/main.js"></script>
-  </body>
+
+  </div>
+
+  <!-- пример использования спрайта -->
+  <!-- <img src="/__spritemap#sprite-logo-view" alt="Это спрайт">
+  <svg>
+    <use href="/__spritemap#sprite-user"></use>
+  </svg> -->
+  <!-- примеры требуемых атрибутов data-test="*" -->
+
+  <script type="module" src="js/main.js"></script>
+</body>
 
 </html>

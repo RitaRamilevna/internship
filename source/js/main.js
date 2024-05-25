@@ -1,4 +1,9 @@
-// https://swiperjs.com/get-started#installation
-// import Swiper from "swiper";
-// import {Navigation, Pagination} from "swiper/modules";
-// import 'swiper/css';
+import { menuOpen } from './modules/menu-open';
+import { initNavigationToggle } from './modules/init-navigation-toggle';
+import { initHeroSlider } from './modules/init-sliders';
+
+document.addEventListener('DOMContentLoaded', () => {
+  menuOpen();
+  initNavigationToggle();
+  initHeroSlider();
+});

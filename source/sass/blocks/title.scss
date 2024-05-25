@@ -1,0 +1,18 @@
+.title {
+  margin: 0;
+
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  color: $color-main-basic;
+
+  @media (min-width: $tablet-width) {
+    font-size: 34px;
+    line-height: 147%;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 50px;
+    line-height: 100%;
+  }
+}

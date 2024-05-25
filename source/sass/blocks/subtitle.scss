@@ -1,0 +1,18 @@
+.subtitle {
+  margin: 0;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 122%;
+  color: $color-main-basic;
+
+  @media (min-width: $tablet-width) {
+    font-size: 28px;
+    line-height: 100%;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 32px;
+    line-height: 112%;
+  }
+}
