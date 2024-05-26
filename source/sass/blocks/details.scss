@@ -1,0 +1,116 @@
+.details {
+  padding: 42px 20px 41px;
+
+  color: $color-main-light;
+
+  background-color: $color-main-basic;
+  border-radius: 20px;
+
+  @media (min-width: $tablet-width) {
+    padding: 72px 50px 50px 70px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 72px 100px 50px 120px;
+  }
+}
+
+.details__list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 22px;
+
+  @media (min-width: $tablet-width) {
+    display: grid;
+
+    column-gap: 52px;
+
+    grid-template-columns: 1fr 1fr;
+    row-gap: 54px;
+  }
+}
+
+.details__item {
+  position: relative;
+
+  height: 100%;
+  padding: 15px 21px 15px 20px;
+
+  border: 1px solid $color-main-light;
+  border-radius: 16px;
+
+  @media (min-width: $tablet-width) {
+    padding: 16px 21px 15px 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: grid;
+    align-content: center;
+    padding: 30px 40px;
+
+    grid-template-columns: 1fr 201px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -23px;
+    left: -21px;
+    z-index: 5;
+
+    width: 42px;
+    height: 42px;
+
+    background-color: $color-main-basic;
+    background-image: url("../img/sprite/about-star.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 18px 22px;
+  }
+}
+
+.details__item h4 {
+  margin: 0;
+  margin-bottom: 15px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 15px;
+
+    font-size: 20px;
+    line-height: 109%;
+  }
+
+  @media (min-width: $desktop-width) {
+    align-self: center;
+    margin: 0;
+
+    font-size: 26px;
+    line-height: 115%;
+  }
+}
+
+.details__item p {
+  margin: 0;
+
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 143%;
+  color: $color-main-light;
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 16px;
+    line-height: 125%;
+  }
+}

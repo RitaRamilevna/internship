@@ -1,0 +1,130 @@
+.about__container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  gap: 40px;
+
+  @media (min-width: $tablet-width) {
+    gap: 60px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+.about__wrapper {
+  display: flex;
+  flex-direction: column;
+
+  gap: 40px;
+
+  @media (min-width: $desktop-width) {
+    flex-direction: row;
+  }
+}
+
+.about__intro {
+  @media (min-width: $desktop-width) {
+    padding: 10px 0;
+  }
+}
+
+.about__title {
+  margin-bottom: 15px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 31px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 30px;
+  }
+}
+
+.about__intro p {
+  margin: 0;
+
+  font-size: 16px;
+  line-height: 137%;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 130%;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 22px;
+    line-height: 145%;
+  }
+}
+
+.about__content {
+  @media (min-width: $desktop-width) {
+    width: 498px;
+    padding: 10px 0 0;
+  }
+}
+
+.about__content h3 {
+  margin: 0;
+  margin-bottom: 20px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 122%;
+  color: $color-main-basic;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 29px;
+
+    font-size: 28px;
+    line-height: 100%;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 41px;
+
+    font-size: 32px;
+    line-height: 112%;
+  }
+}
+
+.about__content p {
+  margin: 0;
+  margin-bottom: 30px;
+
+  font-size: 14px;
+  line-height: 143%;
+
+  @media (min-width: $tablet-width) {
+    width: 500px;
+    margin-bottom: 40px;
+
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 50px;
+
+    font-size: 16px;
+    line-height: 162%;
+  }
+}
+
+.about__button {
+  max-width: 223px;
+
+  @media (min-width: $tablet-width) {
+    max-width: 279px;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-height: 56px;
+    padding: 4px 4px 4px 31px;
+  }
+}

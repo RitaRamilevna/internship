@@ -1,0 +1,133 @@
+.button {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 44px;
+  padding: 4px 4px 4px 20px;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 100%;
+  font-family: $ff-manrope;
+  text-align: center;
+  color: $color-main-basic;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+
+  background-color: transparent;
+  border: 1px solid $color-main-basic;
+  border-radius: 30px;
+  cursor: pointer;
+
+  transition: all 0.3s ease-in-out;
+
+  user-select: none;
+
+  gap: 20px;
+
+  @media (min-width: $tablet-width) {
+    min-height: 56px;
+    padding: 4px 4px 4px 31px;
+
+    font-size: 14px;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-height: 58px;
+    padding: 5px 5px 5px 30px;
+  }
+}
+
+.button__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 34px;
+
+  background-color: $color-main-basic;
+  border-radius: 50%;
+
+  transition: all 0.3s ease-in-out;
+
+  @media (min-width: $tablet-width) {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+.button__icon svg {
+  width: 8px;
+  height: 8px;
+
+  transition: all 0.3s ease-in-out;
+
+  stroke: $color-basic-light;
+}
+
+.button:hover {
+  color: $color-basic-light;
+
+  background-color: $color-main-basic;
+  border: 1px solid $color-main-basic;
+}
+
+.button:hover .button__icon {
+  background-color: $color-basic-light;
+}
+
+.button:hover .button__icon svg {
+  transform: rotate(45deg);
+
+  stroke: #316dc2;
+}
+
+.button:active {
+  color: rgba($color-basic-light, 0.7);
+
+  background-color: $color-main-basic;
+  border: 1px solid $color-main-basic;
+}
+
+.button:active .button__icon {
+  background-color: $color-basic-light;
+}
+
+.button:active .button__icon svg {
+  transform: rotate(45deg);
+  opacity: 0.7;
+
+  stroke: #316dc2;
+}
+
+.button:focus,
+.button:focus-visible {
+  outline: none;
+}
+
+.button:focus .button__icon svg,
+.button:focus-visible .button__icon svg {
+  transform: rotate(45deg);
+}
+
+.button:disabled,
+.button--disabled {
+  color: $color-disabled;
+
+  border: 1px solid $color-disabled;
+
+  pointer-events: none;
+}
+
+.button:disabled .button__icon,
+.button--disabled .button__icon {
+  background-color: $color-disabled;
+}
+
+.button:disabled .button__icon svg,
+.button--disabled .button__icon svg {
+  opacity: 0.6;
+}
