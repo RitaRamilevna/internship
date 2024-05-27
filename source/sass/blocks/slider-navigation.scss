@@ -5,6 +5,10 @@
   height: 22px;
 
   gap: 8px;
+
+  @media (min-width: $desktop-width) {
+    gap: 10px;
+  }
 }
 
 .slider-navigation__button {

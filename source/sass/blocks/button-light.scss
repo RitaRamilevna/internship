@@ -24,7 +24,8 @@
 
   transition: all 0.3s ease-in-out;
 
-  user-select: none;
+  -webkit-user-select: none;
+          user-select: none;
 
   gap: 20px;
 
@@ -82,7 +83,7 @@
 .button:hover .button__icon svg {
   transform: rotate(45deg);
 
-  stroke: #316dc2;
+  stroke: $color-main-basic;
 }
 
 .button:active {
@@ -100,7 +101,7 @@
   transform: rotate(45deg);
   opacity: 0.7;
 
-  stroke: #316dc2;
+  stroke: $color-main-basic;
 }
 
 .button:focus,

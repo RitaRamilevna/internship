@@ -10,11 +10,6 @@
   border-radius: 50%;
 
   transition: all 0.3s ease-in-out;
-
-  @media (min-width: $tablet-width) {
-    width: 46px;
-    height: 46px;
-  }
 }
 
 .button-icon svg {
@@ -46,7 +41,7 @@
   transform: rotate(45deg);
   opacity: 0.7;
 
-  stroke: #316dc2;
+  stroke: $color-main-basic;
 }
 
 .button-icon:focus svg,
