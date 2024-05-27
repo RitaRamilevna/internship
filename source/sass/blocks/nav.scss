@@ -11,6 +11,8 @@
   max-width: 1240px;
   margin: 0 auto;
 
+  gap: 20px;
+
   @media (min-width: $tablet-width) {
     top: 30px;
     right: 45px;

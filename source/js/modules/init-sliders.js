@@ -1,11 +1,14 @@
 import Swiper from 'swiper';
-import { /* Navigation, */ Pagination, Autoplay, EffectFade } from 'swiper/modules';
+import {
+  Navigation, Pagination, Autoplay, EffectFade,
+  Scrollbar
+} from 'swiper/modules';
 // import Swiper and modules styles
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
+import 'swiper/css/scrollbar';
 
 
 export function initHeroSlider() {
@@ -47,6 +50,61 @@ export function initHeroSlider() {
   });
   return heroSwiper;
 }
+export function initProgramsSlider() {
+  const programsSlider = new Swiper('.programs__swiper', {
+    modules: [Navigation, Scrollbar],
+    direction: 'horizontal',
+
+    grabCursor: true,
+    draggable: true,
+    speed: 500,
+
+    navigation: {
+      nextEl: '.programs__button--next',
+      prevEl: '.programs__button--prev',
+    },
+
+    scrollbar: {
+      allowTouchMove: true,
+      el: '.programs__scrollbar',
+
+    },
+
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+        autoHeight: true,
+        scrollbar: {
+          hide: true,
+          el: '',
+          enabled: false,
+        },
+      },
+      // when window width is >= 768px
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+        scrollbar: {
+          dragSize: 324,
+        },
+      },
+      // when window width is >= 1440px
+      1440: {
+        slidesPerView: 3,
+        spaceBetween: 32,
+        allowTouchMove: false,
+        scrollbar: {
+          dragSize: 392,
+        },
+      },
+    },
+  });
+
+  return programsSlider;
+
+}
 /*
 export function initToursSlider() {
   const toursSlider = new Swiper('.tours__swiper', {
@@ -86,47 +144,6 @@ export function initToursSlider() {
   });
 
   return toursSlider;
-
-}
-
-export function initTrainingSlider() {
-  const trainingSlider = new Swiper('.training__swiper', {
-    modules: [Navigation],
-    direction: 'horizontal',
-
-    grabCursor: true,
-    speed: 500,
-    observer: true,
-    observeParents: true,
-
-    navigation: {
-      nextEl: '.training__button--next',
-      prevEl: '.training__button--prev',
-    },
-
-    breakpoints: {
-      // when window width is >= 320px
-      320: {
-        initialSlide: 2,
-        slidesPerView: 1,
-        spaceBetween: 15,
-        autoHeight: true,
-      },
-      // when window width is >= 768px
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-      },
-      // when window width is >= 1440px
-      1440: {
-        slidesPerView: 4,
-        spaceBetween: 20,
-        simulateTouch: false,
-      },
-    },
-  });
-
-  return trainingSlider;
 
 }
 
