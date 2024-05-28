@@ -65,6 +65,8 @@ export function initProgramsSlider() {
     },
 
     scrollbar: {
+      grabCursor: true,
+      draggable: true,
       allowTouchMove: true,
       el: '.programs__scrollbar',
 
