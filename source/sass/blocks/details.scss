@@ -1,5 +1,5 @@
 .details {
-  padding: 42px 20px 41px;
+  padding: 42px 20px 40px;
 
   color: $color-main-light;
 
@@ -81,10 +81,10 @@
   letter-spacing: 0.01em;
 
   @media (min-width: $tablet-width) {
-    margin-bottom: 15px;
+    margin-bottom: 14px;
 
     font-size: 20px;
-    line-height: 109%;
+    line-height: 110%;
   }
 
   @media (min-width: $desktop-width) {
@@ -92,7 +92,7 @@
     margin: 0;
 
     font-size: 26px;
-    line-height: 115%;
+    line-height: 116%;
   }
 }
 

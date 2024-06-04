@@ -294,14 +294,14 @@
 
             <div class="programs__slider-navigation slider-navigation">
 
-              <button class="programs__button-navigation programs__button--prev slider-navigation__button slider-navigation__button--prev button-reset swiper-button swiper-button-prev" type="button">
+              <button class="programs__button-navigation programs__button-navigation--prev slider-navigation__button slider-navigation__button--prev button-reset swiper-button swiper-button-prev" type="button">
                 <span class="visually-hidden">Предыдущий слайд.</span>
                 <svg width="10" height="10" role="img" aria-hidden="true" focusable="false">
                   <use href="/__spritemap#sprite-slider-arrow"></use>
                 </svg>
               </button>
 
-              <button class="programs__button-navigation programs__button--next slider-navigation__button slider-navigation__button--next button-reset swiper-button swiper-button-next" type="button">
+              <button class="programs__button-navigation programs__button-navigation--next slider-navigation__button slider-navigation__button--next button-reset swiper-button swiper-button-next" type="button">
                 <span class="visually-hidden">Следующий слайд.</span>
                 <svg width="10" height="10" role="img" aria-hidden="true" focusable="false">
                   <use href="/__spritemap#sprite-slider-arrow"></use>
@@ -493,10 +493,587 @@
 
       </section>
 
-      <div data-test="grant">grant</div>
-      <div data-test="news">news</div>
-      <div data-test="FAQ">FAQ</div>
-      <div data-test="reviews">reviews</div>
+      <section class="grant" id="grant" data-test="grant">
+
+        <div class="grant__container container">
+          <h2 class="visually-hidden">Как получить грант</h2>
+          <div class="grant__intro">
+            <h3>Как поехать</h3>
+            <p>Свяжитесь с координатором, чтобы узнать полную информацию. Вы получите актуальные сведения о доступных программах и городах, в которых можете пройти программу.</p>
+            <picture>
+              <source type="image/webp" media="(min-width: 1440px)" srcset="img/grant/grant-desktop@1.webp 1x, img/grant/grant-desktop@2.webp 2x" width="498" height="363">
+              <source type="image/webp" media="(min-width: 768px)" srcset="img/grant/grant-tablet@1.webp 1x, img/grant/grant-tablet@2.webp 2x" width="678" height="375">
+              <source type="image/webp" srcset="img/grant/grant-mobile@1.webp 1x, img/grant/grant-mobile@2.webp 2x" width="290" height="200">
+              <source type="image/jpeg" media="(min-width: 1440px)" srcset="img/grant/grant-desktop@1.png, img/grant/grant-desktop@2.png 2x" width="498" height="363">
+              <source type="image/jpeg" media="(min-width: 768px)" srcset="img/grant/grant-tablet@1.png, img/grant/grant-tablet@2.png 2x" width="678" height="375">
+              <img src="img/grant/grant-mobile@1.png" srcset="img/grant/grant-mobile@2.png 2x" alt="Стрелки-указатели расстояния до разных стран на столбе." width="290" height="200">
+            </picture>
+          </div>
+
+          <div class="grant__content">
+            <h3>Чтобы получить грант на обучение, вам нужно:</h3>
+            <ul class="grant__list list-reset">
+
+              <li class="grant__item">
+                <p>Быть в возрасте от 16 до 30 лет</p>
+              </li>
+              <li class="grant__item">
+                <p>Иметь оконченное среднее образование</p>
+              </li>
+              <li class="grant__item">
+                <p>Иметь документально подтверждённое отсутствие судимости и пройти консульскую проверку</p>
+              </li>
+              <li class="grant__item">
+                <p>За последние 2 года быть не больше 3х месяцев подряд непрерывно в одной стране</p>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="news" id="news" data-test="news">
+        <div class="news__container container">
+
+          <h2 class="news__title title">Новости и материалы</h2>
+
+          <!-- Табы слайдера -->
+
+          <ul class="news__tab-list list-reset">
+            <li>
+              <button class="news__tab-item news__tab-item--active button-reset" type="button" data-name="news-tab" data-filter="all">Общее</button>
+            </li>
+            <li>
+              <button class="news__tab-item button-reset" type="button" data-name="news-tab" data-filter="volunteering">Волонтёрство</button>
+            </li>
+            <li>
+              <button class="news__tab-item button-reset" type="button" data-name="news-tab" data-filter="internships">Стажировки</button>
+            </li>
+            <li>
+              <button class="news__tab-item button-reset" type="button" data-name="news-tab" data-filter="career">Карьера</button>
+            </li>
+            <li>
+              <button class="news__tab-item button-reset" type="button" data-name="news-tab" data-filter="travelling">Путешествия</button>
+            </li>
+          </ul>
+
+          <!-- Слайдер -->
+
+          <div class="news__swiper swiper">
+            <ul class="news__list swiper-wrapper">
+
+              <li class="news__item swiper-slide news__item--wide" data-news="slide" data-filter="internships">
+                <div class="news__item-container">
+                  <div class="news__image">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1440px)" srcset="img/news/1-news-desktop@1.webp 1x, img/news/1-news-desktop@2.webp 2x" width="604" height="400">
+                      <source type="image/webp" media="(min-width: 768px)" srcset="img/news/1-news-tablet@1.webp 1x, img/news/1-news-tablet@2.webp 2x" width="324" height="350">
+                      <source type="image/webp" srcset="img/news/1-news-mobile@1.webp 1x, img/news/1-news-mobile@2.webp 2x" width="290" height="330">
+                      <source type="image/jpeg" media="(min-width: 1440px)" srcset="img/news/1-news-desktop@1.jpg, img/news/1-news-desktop@2.jpg 2x" width="604" height="400">
+                      <source type="image/jpeg" media="(min-width: 768px)" srcset="img/news/1-news-tablet@1.jpg, img/news/1-news-tablet@2.jpg 2x" width="324" height="350">
+                      <img src="img/news/1-news-mobile@1.jpg" srcset="img/news/1-news-mobile@2.jpg 2x" alt="Стажёр проходит собеседование." width="290" height="330">
+                    </picture>
+                  </div>
+                  <div class="news__wrapper">
+                    <time class="news__time" datetime="2023-03-23">23/03/2023</time>
+                    <h3 class="news__subtitle">Интервью с&nbsp;участницей программы стажировки</h3>
+                    <div class="news__info">
+                      <p>Саша рассказывает, как&nbsp;попала в&nbsp;программу и&nbsp;как прошла 6-месячная стажировка в ISOFound</p>
+                      <a class="news__button-icon button-icon" href="#">
+                        <span class="visually-hidden">Подробнее</span>
+                        <svg width="10" height="10" viewBox="0 0 10 10" role="img" aria-hidden="true" focusable="false">
+                          <use href="/__spritemap#sprite-button-arrow"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="news__item swiper-slide" data-news="slide" data-filter="travelling">
+                <div class="news__item-container">
+                  <div class="news__image">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1440px)" srcset="img/news/2-news-desktop@1.webp 1x, img/news/2-news-desktop@2.webp 2x" width="604" height="400">
+                      <source type="image/webp" media="(min-width: 768px)" srcset="img/news/2-news-tablet@1.webp 1x, img/news/2-news-tablet@2.webp 2x" width="324" height="350">
+                      <source type="image/webp" srcset="img/news/2-news-mobile@1.webp 1x, img/news/2-news-mobile@2.webp 2x" width="290" height="330">
+                      <source type="image/jpeg" media="(min-width: 1440px)" srcset="img/news/2-news-desktop@1.jpg, img/news/2-news-desktop@2.jpg 2x" width="604" height="400">
+                      <source type="image/jpeg" media="(min-width: 768px)" srcset="img/news/2-news-tablet@1.jpg, img/news/2-news-tablet@2.jpg 2x" width="324" height="350">
+                      <img src="img/news/2-news-mobile@1.jpg" srcset="img/news/2-news-mobile@2.jpg 2x" alt="Стажёр проходит собеседование." width="290" height="330">
+                    </picture>
+                  </div>
+                  <div class="news__wrapper news__wrapper--differ">
+                    <time class="news__time" datetime="2023-03-20">20/03/2023</time>
+                    <h3 class="news__subtitle">Путешествуем по&nbsp;миру</h3>
+                    <div class="news__info">
+                      <p>Какие места посещают наши студенты весной</p>
+                      <a class="news__button-icon button-icon" href="#">
+                        <span class="visually-hidden">Подробнее</span>
+                        <svg width="10" height="10" viewBox="0 0 10 10" role="img" aria-hidden="true" focusable="false">
+                          <use href="/__spritemap#sprite-button-arrow"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </li>
+
+              <li class="news__item swiper-slide" data-news="slide" data-filter="volunteering">
+                <div class="news__item-container">
+                  <div class="news__image">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1440px)" srcset="img/news/3-news-desktop@1.webp 1x, img/news/3-news-desktop@2.webp 2x" width="604" height="400">
+                      <source type="image/webp" media="(min-width: 768px)" srcset="img/news/3-news-tablet@1.webp 1x, img/news/3-news-tablet@2.webp 2x" width="324" height="350">
+                      <source type="image/jpeg" media="(min-width: 1440px)" srcset="img/news/3-news-desktop@1.jpg, img/news/3-news-desktop@2.jpg 2x" width="604" height="400">
+                      <img src="img/news/3-news-tablet@1.jpg" srcset="img/news/3-news-tablet@2.jpg 2x" alt="Стажёр проходит собеседование." width="324" height="350">
+                    </picture>
+                  </div>
+                  <div class="news__wrapper">
+                    <time class="news__time" datetime="2023-03-17">17/03/2023</time>
+                    <h3 class="news__subtitle">Новая программа волонтёрства</h3>
+                    <div class="news__info">
+                      <p>Программа помощи детям длительностью 4 месяца</p>
+                      <a class="news__button-icon button-icon" href="#">
+                        <span class="visually-hidden">Подробнее</span>
+                        <svg width="10" height="10" viewBox="0 0 10 10" role="img" aria-hidden="true" focusable="false">
+                          <use href="/__spritemap#sprite-button-arrow"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="news__item swiper-slide" data-news="slide" data-filter="career">
+                <div class="news__item-container">
+                  <div class="news__image">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1440px)" srcset="img/news/4-news-desktop@1.webp 1x, img/news/4-news-desktop@2.webp 2x" width="604" height="400">
+                      <source type="image/webp" media="(min-width: 768px)" srcset="img/news/4-news-tablet@1.webp 1x, img/news/4-news-tablet@2.webp 2x" width="324" height="350">
+                      <source type="image/jpeg" media="(min-width: 1440px)" srcset="img/news/4-news-desktop@1.jpg, img/news/4-news-desktop@2.jpg 2x" width="604" height="400">
+                      <img src="img/news/4-news-tablet@1.jpg" srcset="img/news/4-news-tablet@2.jpg 2x" alt="Стажёр проходит собеседование." width="324" height="350">
+                    </picture>
+                  </div>
+                  <div class="news__wrapper">
+                    <time class="news__time" datetime="2023-03-10">10/03/2023</time>
+                    <h3 class="news__subtitle">Построй свою карьеру</h3>
+                    <div class="news__info">
+                      <p>Ведущие компании готовы&nbsp;трудоустроить выпускников стажировки</p>
+                      <a class="news__button-icon button-icon" href="#">
+                        <span class="visually-hidden">Подробнее</span>
+                        <svg width="10" height="10" viewBox="0 0 10 10" role="img" aria-hidden="true" focusable="false">
+                          <use href="/__spritemap#sprite-button-arrow"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="news__item swiper-slide" data-news="slide" data-filter="internships">
+                <div class="news__item-container">
+                  <div class="news__image">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1440px)" srcset="img/news/1-news-desktop@1.webp 1x, img/news/1-news-desktop@2.webp 2x" width="604" height="400">
+                      <source type="image/webp" media="(min-width: 768px)" srcset="img/news/1-news-tablet@1.webp 1x, img/news/1-news-tablet@2.webp 2x" width="324" height="350">
+                      <source type="image/webp" srcset="img/news/1-news-mobile@1.webp 1x, img/news/1-news-mobile@2.webp 2x" width="290" height="330">
+                      <source type="image/jpeg" media="(min-width: 1440px)" srcset="img/news/1-news-desktop@1.jpg, img/news/1-news-desktop@2.jpg 2x" width="604" height="400">
+                      <source type="image/jpeg" media="(min-width: 768px)" srcset="img/news/1-news-tablet@1.jpg, img/news/1-news-tablet@2.jpg 2x" width="324" height="350">
+                      <img src="img/news/1-news-mobile@1.jpg" srcset="img/news/1-news-mobile@2.jpg 2x" alt="Стажёр проходит собеседование." width="290" height="330">
+                    </picture>
+                  </div>
+                  <div class="news__wrapper">
+                    <time class="news__time" datetime="2023-03-23">23/03/2023</time>
+                    <h3 class="news__subtitle">Интервью с&nbsp;участницей программы стажировки</h3>
+                    <div class="news__info">
+                      <p>Саша рассказывает, как&nbsp;попала в&nbsp;программу и&nbsp;как прошла 6-месячная стажировка в ISOFound</p>
+                      <a class="news__button-icon button-icon" href="#">
+                        <span class="visually-hidden">Подробнее</span>
+                        <svg width="10" height="10" viewBox="0 0 10 10" role="img" aria-hidden="true" focusable="false">
+                          <use href="/__spritemap#sprite-button-arrow"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="news__item swiper-slide" data-news="slide" data-filter="travelling">
+                <div class="news__item-container">
+                  <div class="news__image">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1440px)" srcset="img/news/2-news-desktop@1.webp 1x, img/news/2-news-desktop@2.webp 2x" width="604" height="400">
+                      <source type="image/webp" media="(min-width: 768px)" srcset="img/news/2-news-tablet@1.webp 1x, img/news/2-news-tablet@2.webp 2x" width="324" height="350">
+                      <source type="image/webp" srcset="img/news/2-news-mobile@1.webp 1x, img/news/2-news-mobile@2.webp 2x" width="290" height="330">
+                      <source type="image/jpeg" media="(min-width: 1440px)" srcset="img/news/2-news-desktop@1.jpg, img/news/2-news-desktop@2.jpg 2x" width="604" height="400">
+                      <source type="image/jpeg" media="(min-width: 768px)" srcset="img/news/2-news-tablet@1.jpg, img/news/2-news-tablet@2.jpg 2x" width="324" height="350">
+                      <img src="img/news/2-news-mobile@1.jpg" srcset="img/news/2-news-mobile@2.jpg 2x" alt="Стажёр проходит собеседование." width="290" height="330">
+                    </picture>
+                  </div>
+                  <div class="news__wrapper news__wrapper--differ">
+                    <time class="news__time" datetime="2023-03-20">20/03/2023</time>
+                    <h3 class="news__subtitle">Путешествуем по&nbsp;миру</h3>
+                    <div class="news__info">
+                      <p>Какие места посещают наши студенты весной</p>
+                      <a class="news__button-icon button-icon" href="#">
+                        <span class="visually-hidden">Подробнее</span>
+                        <svg width="10" height="10" viewBox="0 0 10 10" role="img" aria-hidden="true" focusable="false">
+                          <use href="/__spritemap#sprite-button-arrow"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </li>
+
+              <li class="news__item swiper-slide" data-news="slide" data-filter="volunteering">
+                <div class="news__item-container">
+                  <div class="news__image">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1440px)" srcset="img/news/3-news-desktop@1.webp 1x, img/news/3-news-desktop@2.webp 2x" width="604" height="400">
+                      <source type="image/webp" media="(min-width: 768px)" srcset="img/news/3-news-tablet@1.webp 1x, img/news/3-news-tablet@2.webp 2x" width="324" height="350">
+                      <source type="image/jpeg" media="(min-width: 1440px)" srcset="img/news/3-news-desktop@1.jpg, img/news/3-news-desktop@2.jpg 2x" width="604" height="400">
+                      <img src="img/news/3-news-tablet@1.jpg" srcset="img/news/3-news-tablet@2.jpg 2x" alt="Стажёр проходит собеседование." width="324" height="350">
+                    </picture>
+                  </div>
+                  <div class="news__wrapper">
+                    <time class="news__time" datetime="2023-03-17">17/03/2023</time>
+                    <h3 class="news__subtitle">Новая программа волонтёрства</h3>
+                    <div class="news__info">
+                      <p>Программа помощи детям длительностью 4 месяца</p>
+                      <a class="news__button-icon button-icon" href="#">
+                        <span class="visually-hidden">Подробнее</span>
+                        <svg width="10" height="10" viewBox="0 0 10 10" role="img" aria-hidden="true" focusable="false">
+                          <use href="/__spritemap#sprite-button-arrow"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="news__item swiper-slide" data-news="slide" data-filter="career">
+                <div class="news__item-container">
+                  <div class="news__image">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1440px)" srcset="img/news/4-news-desktop@1.webp 1x, img/news/4-news-desktop@2.webp 2x" width="604" height="400">
+                      <source type="image/webp" media="(min-width: 768px)" srcset="img/news/4-news-tablet@1.webp 1x, img/news/4-news-tablet@2.webp 2x" width="324" height="350">
+                      <source type="image/jpeg" media="(min-width: 1440px)" srcset="img/news/4-news-desktop@1.jpg, img/news/4-news-desktop@2.jpg 2x" width="604" height="400">
+                      <img src="img/news/4-news-tablet@1.jpg" srcset="img/news/4-news-tablet@2.jpg 2x" alt="Стажёр проходит собеседование." width="324" height="350">
+                    </picture>
+                  </div>
+                  <div class="news__wrapper">
+                    <time class="news__time" datetime="2023-03-10">10/03/2023</time>
+                    <h3 class="news__subtitle">Построй свою карьеру</h3>
+                    <div class="news__info">
+                      <p>Ведущие компании готовы&nbsp;трудоустроить выпускников стажировки</p>
+                      <a class="news__button-icon button-icon" href="#">
+                        <span class="visually-hidden">Подробнее</span>
+                        <svg width="10" height="10" viewBox="0 0 10 10" role="img" aria-hidden="true" focusable="false">
+                          <use href="/__spritemap#sprite-button-arrow"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="news__item swiper-slide" data-news="slide" data-filter="internships">
+                <div class="news__item-container">
+                  <div class="news__image">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1440px)" srcset="img/news/1-news-desktop@1.webp 1x, img/news/1-news-desktop@2.webp 2x" width="604" height="400">
+                      <source type="image/webp" media="(min-width: 768px)" srcset="img/news/1-news-tablet@1.webp 1x, img/news/1-news-tablet@2.webp 2x" width="324" height="350">
+                      <source type="image/webp" srcset="img/news/1-news-mobile@1.webp 1x, img/news/1-news-mobile@2.webp 2x" width="290" height="330">
+                      <source type="image/jpeg" media="(min-width: 1440px)" srcset="img/news/1-news-desktop@1.jpg, img/news/1-news-desktop@2.jpg 2x" width="604" height="400">
+                      <source type="image/jpeg" media="(min-width: 768px)" srcset="img/news/1-news-tablet@1.jpg, img/news/1-news-tablet@2.jpg 2x" width="324" height="350">
+                      <img src="img/news/1-news-mobile@1.jpg" srcset="img/news/1-news-mobile@2.jpg 2x" alt="Стажёр проходит собеседование." width="290" height="330">
+                    </picture>
+                  </div>
+                  <div class="news__wrapper">
+                    <time class="news__time" datetime="2023-03-23">23/03/2023</time>
+                    <h3 class="news__subtitle">Интервью с&nbsp;участницей программы стажировки</h3>
+                    <div class="news__info">
+                      <p>Саша рассказывает, как&nbsp;попала в&nbsp;программу и&nbsp;как прошла 6-месячная стажировка в ISOFound</p>
+                      <a class="news__button-icon button-icon" href="#">
+                        <span class="visually-hidden">Подробнее</span>
+                        <svg width="10" height="10" viewBox="0 0 10 10" role="img" aria-hidden="true" focusable="false">
+                          <use href="/__spritemap#sprite-button-arrow"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="news__item swiper-slide" data-news="slide" data-filter="travelling">
+                <div class="news__item-container">
+                  <div class="news__image">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1440px)" srcset="img/news/2-news-desktop@1.webp 1x, img/news/2-news-desktop@2.webp 2x" width="604" height="400">
+                      <source type="image/webp" media="(min-width: 768px)" srcset="img/news/2-news-tablet@1.webp 1x, img/news/2-news-tablet@2.webp 2x" width="324" height="350">
+                      <source type="image/webp" srcset="img/news/2-news-mobile@1.webp 1x, img/news/2-news-mobile@2.webp 2x" width="290" height="330">
+                      <source type="image/jpeg" media="(min-width: 1440px)" srcset="img/news/2-news-desktop@1.jpg, img/news/2-news-desktop@2.jpg 2x" width="604" height="400">
+                      <source type="image/jpeg" media="(min-width: 768px)" srcset="img/news/2-news-tablet@1.jpg, img/news/2-news-tablet@2.jpg 2x" width="324" height="350">
+                      <img src="img/news/2-news-mobile@1.jpg" srcset="img/news/2-news-mobile@2.jpg 2x" alt="Стажёр проходит собеседование." width="290" height="330">
+                    </picture>
+                  </div>
+                  <div class="news__wrapper news__wrapper--differ">
+                    <time class="news__time" datetime="2023-03-20">20/03/2023</time>
+                    <h3 class="news__subtitle">Путешествуем по&nbsp;миру</h3>
+                    <div class="news__info">
+                      <p>Какие места посещают наши студенты весной</p>
+                      <a class="news__button-icon button-icon" href="#">
+                        <span class="visually-hidden">Подробнее</span>
+                        <svg width="10" height="10" viewBox="0 0 10 10" role="img" aria-hidden="true" focusable="false">
+                          <use href="/__spritemap#sprite-button-arrow"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </li>
+
+              <li class="news__item swiper-slide" data-news="slide" data-filter="volunteering">
+                <div class="news__item-container">
+                  <div class="news__image">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1440px)" srcset="img/news/3-news-desktop@1.webp 1x, img/news/3-news-desktop@2.webp 2x" width="604" height="400">
+                      <source type="image/webp" media="(min-width: 768px)" srcset="img/news/3-news-tablet@1.webp 1x, img/news/3-news-tablet@2.webp 2x" width="324" height="350">
+                      <source type="image/jpeg" media="(min-width: 1440px)" srcset="img/news/3-news-desktop@1.jpg, img/news/3-news-desktop@2.jpg 2x" width="604" height="400">
+                      <img src="img/news/3-news-tablet@1.jpg" srcset="img/news/3-news-tablet@2.jpg 2x" alt="Стажёр проходит собеседование." width="324" height="350">
+                    </picture>
+                  </div>
+                  <div class="news__wrapper">
+                    <time class="news__time" datetime="2023-03-17">17/03/2023</time>
+                    <h3 class="news__subtitle">Новая программа волонтёрства</h3>
+                    <div class="news__info">
+                      <p>Программа помощи детям длительностью 4 месяца</p>
+                      <a class="news__button-icon button-icon" href="#">
+                        <span class="visually-hidden">Подробнее</span>
+                        <svg width="10" height="10" viewBox="0 0 10 10" role="img" aria-hidden="true" focusable="false">
+                          <use href="/__spritemap#sprite-button-arrow"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="news__item swiper-slide" data-news="slide" data-filter="career">
+                <div class="news__item-container">
+                  <div class="news__image">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1440px)" srcset="img/news/4-news-desktop@1.webp 1x, img/news/4-news-desktop@2.webp 2x" width="604" height="400">
+                      <source type="image/webp" media="(min-width: 768px)" srcset="img/news/4-news-tablet@1.webp 1x, img/news/4-news-tablet@2.webp 2x" width="324" height="350">
+                      <source type="image/jpeg" media="(min-width: 1440px)" srcset="img/news/4-news-desktop@1.jpg, img/news/4-news-desktop@2.jpg 2x" width="604" height="400">
+                      <img src="img/news/4-news-tablet@1.jpg" srcset="img/news/4-news-tablet@2.jpg 2x" alt="Стажёр проходит собеседование." width="324" height="350">
+                    </picture>
+                  </div>
+                  <div class="news__wrapper">
+                    <time class="news__time" datetime="2023-03-10">10/03/2023</time>
+                    <h3 class="news__subtitle">Построй свою карьеру</h3>
+                    <div class="news__info">
+                      <p>Ведущие компании готовы&nbsp;трудоустроить выпускников стажировки</p>
+                      <a class="news__button-icon button-icon" href="#">
+                        <span class="visually-hidden">Подробнее</span>
+                        <svg width="10" height="10" viewBox="0 0 10 10" role="img" aria-hidden="true" focusable="false">
+                          <use href="/__spritemap#sprite-button-arrow"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+
+          <!-- Навигация слайдера (стрелочки) -->
+
+          <div class="news__slider-navigation slider-navigation">
+
+            <button class="news__button-navigation news__button-navigation--prev slider-navigation__button slider-navigation__button--prev button-reset swiper-button swiper-button-prev" type="button">
+              <span class="visually-hidden">Предыдущий слайд.</span>
+              <svg width="10" height="10" role="img" aria-hidden="true" focusable="false">
+                <use href="/__spritemap#sprite-slider-arrow"></use>
+              </svg>
+            </button>
+
+            <div class="news__pagination swiper-pagination  swiper-pagination-bullets">
+              <button class="news__pagination-bullet  swiper-pagination-bullet swiper-pagination-bullet-active" aria-current="true" type="button" tabindex="0">1</button>
+              <button class="news__pagination-bullet swiper-pagination-bullet" type="button" tabindex="-1">2</button>
+              <button class="news__pagination-bullet swiper-pagination-bullet" type="button" tabindex="-1">3</button>
+            </div>
+
+            <button class="news__button-navigation news__button-navigation--next slider-navigation__button slider-navigation__button--next button-reset swiper-button swiper-button-next" type="button">
+              <span class="visually-hidden">Следующий слайд.</span>
+              <svg width="10" height="10" role="img" aria-hidden="true" focusable="false">
+                <use href="/__spritemap#sprite-slider-arrow"></use>
+              </svg>
+            </button>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="faq" id="faq" data-test="FAQ">
+        <div class="faq__container container">
+          <h2 class="faq__title title">Вопросы и ответы</h2>
+
+          <ul class="faq__accordion-list  list-reset">
+
+            <li class="faq__accordion-item">
+              <button class="faq__accordion-button button-reset" type="button">
+                <span>Кто организатор? Какие сроки у программы?</span>
+                <span class="faq__accordion-icon">
+                  <span class="visually-hidden">Подробнее</span>
+                </span>
+              </button>
+              <div class="faq__accordion-content">
+                <div class="faq__accordion-wrapper">
+                  <p>Организатором программы является проект «Стажировка» в сотрудничестве с образовательными учреждениями. Сроки программы обмена могут варьироваться от одного семестра до года.</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="faq__accordion-item">
+              <button class="faq__accordion-button button-reset" type="button">
+                <span>Что такое грант на обучение?</span>
+                <span class="faq__accordion-icon">
+                  <span class="visually-hidden">Подробнее</span>
+                </span>
+              </button>
+              <div class="faq__accordion-content">
+                <div class="faq__accordion-wrapper">
+                  <p>Грант на обучение — это финансовая поддержка, которую предоставляет организатор программы обмена студентами для оплаты учебных расходов.</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="faq__accordion-item">
+              <button class="faq__accordion-button button-reset" type="button">
+                <span>Как определяется стоимость программы?</span>
+                <span class="faq__accordion-icon">
+                  <span class="visually-hidden">Подробнее</span>
+                </span>
+              </button>
+              <div class="faq__accordion-content">
+                <div class="faq__accordion-wrapper">
+                  <p>Полная стоимость определяется организаторами в зависимости от направления. В большинстве случаев грант «Стажировка» не покрывает полную стоимость программы, и поэтому предусматривается определённая доля личного участия.</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="faq__accordion-item">
+              <button class="faq__accordion-button button-reset" type="button">
+                <span>Признаётся ли учёба в рамках проекта<br> для дальнейшего обучения?</span>
+                <span class="faq__accordion-icon">
+                  <span class="visually-hidden">Подробнее</span>
+                </span>
+              </button>
+              <div class="faq__accordion-content">
+                <div class="faq__accordion-wrapper">
+                  <p>Студенты, участвующие в проекте, могут использовать полученные знания и навыки в своей будущей профессиональной деятельности или продолжить обучение в высших учебных заведениях. Кроме того, многие университеты и колледжи предоставляют кредиты за участие в программе обмена студентами.</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="faq__accordion-item">
+              <button class="faq__accordion-button button-reset" type="button">
+                <span>Как выглядит полный процесс регистрации на программу «Стажировка»?</span>
+                <span class="faq__accordion-icon">
+                  <span class="visually-hidden">Подробнее</span>
+                </span>
+              </button>
+              <div class="faq__accordion-content">
+                <div class="faq__accordion-wrapper">
+                  <p>Процесс регистрации на программу обмена включает выбор университета-партнера и программы обмена, общение с координатором программы, заполнение заявления и предоставление необходимых документов, прохождение интервью, оформление визы, жилья и страховки, обучение по безопасности за границей и подписание договора об участии в программе. Подробнее можно узнать позвонив в центр.</p>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+      <section class="reviews" id="reviews" data-test="reviews">
+        <div class="reviews__container container">
+
+          <div class="reviews__wrapper">
+
+            <h2 class="reviews__title title">Отзывы</h2>
+
+            <div class="reviews__slider-navigation slider-navigation">
+
+              <button class="reviews__button-navigation reviews__button-navigation--prev slider-navigation__button slider-navigation__button--prev button-reset swiper-button swiper-button-prev" type="button">
+                <span class="visually-hidden">Предыдущий слайд.</span>
+                <svg width="10" height="10" role="img" aria-hidden="true" focusable="false">
+                  <use href="/__spritemap#sprite-slider-arrow"></use>
+                </svg>
+              </button>
+
+              <button class="reviews__button-navigation reviews__button-navigation--next slider-navigation__button slider-navigation__button--next button-reset swiper-button swiper-button-next" type="button">
+                <span class="visually-hidden">Следующий слайд.</span>
+                <svg width="10" height="10" role="img" aria-hidden="true" focusable="false">
+                  <use href="/__spritemap#sprite-slider-arrow"></use>
+                </svg>
+              </button>
+            </div>
+
+            <div class="reviews__swiper swiper">
+              <ul class="reviews__list list-reset swiper-wrapper">
+
+                <li class="reviews__item swiper-slide">
+
+                  <blockquote>
+                    <div class="reviews__intro">
+                      <picture>
+                        <source type="image/webp" media="(min-width: 768px)" srcset="img/reviews/1-reviews-tablet@1.webp 1x, img/reviews/1-reviews-tablet@2.webp 2x" width="90" height="90">
+                        <source type="image/webp" srcset="img/reviews/1-reviews-mobile@1.webp 1x, img/reviews/1-reviews-mobile@2.webp 2x" width="60" height="60">
+                        <source type="image/jpeg" media="(min-width: 768px)" srcset="img/reviews/1-reviews-tablet@1.jpg, img/reviews/1-reviews-tablet@2.jpg 2x" width="90" height="90">
+                        <img src="img/reviews/1-reviews-mobile@1.jpg" srcset="img/reviews/1-reviews-mobile@2.jpg 2x" alt="Кудрявая девушка в очках." width="60" height="60">
+                      </picture>
+                      <cite>Лола<br>Алекс</cite>
+                      <dl>
+                        <div class="reviews__author-info">
+                          <dt>Программа</dt>
+                          <dd>Masa Art Challenge</dd>
+                        </div>
+                        <div class="reviews__author-info">
+                          <dt>Дата</dt>
+                          <dd>Осень 2022</dd>
+                        </div>
+                      </dl>
+                    </div>
+                    <div class="reviews__quote">
+                      <h3>Я могу с уверенностью сказать, что это был один из самых незабываемых опытов в&nbsp;жизни!</h3>
+                      <p>Я рекомендую программу «Стажировка» всем студентам, желающим получить незабываемые впечатления. Сочетание путешествий, общения и значимой работы действительно отличает её от других программ, и&nbsp;я&nbsp;чувствую огромную благодарность за&nbsp;предоставленную мне возможность.</p>
+                    </div>
+                  </blockquote>
+
+                </li>
+
+              </ul>
+            </div>
+
+            <div class="programs__scrollbar  swiper-scrollbar">
+              <div class="programs__scrollbar-drag swiper-scrollbar-drag">
+                <span class="visually-hidden">Прокрутить ползунок к следующим слайдам</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
       <div data-test="contacts">contacts</div>
       <div data-test="form">form</div>
 

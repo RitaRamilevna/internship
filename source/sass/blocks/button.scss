@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   min-height: 44px;
-  padding: 4px 4px 4px 20px;
+  padding: 5px 4px 3px 20px;
 
   font-weight: 500;
   font-size: 12px;
@@ -24,14 +24,11 @@
 
   transition: all 0.3s ease-in-out;
 
-  -webkit-user-select: none;
-          user-select: none;
-
   gap: 20px;
 
   @media (min-width: $tablet-width) {
     min-height: 56px;
-    padding: 4px 4px 4px 31px;
+    padding: 4px 4px 4px 30px;
 
     font-size: 14px;
   }

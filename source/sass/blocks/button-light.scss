@@ -24,9 +24,6 @@
 
   transition: all 0.3s ease-in-out;
 
-  -webkit-user-select: none;
-          user-select: none;
-
   gap: 20px;
 
   @media (min-width: $tablet-width) {

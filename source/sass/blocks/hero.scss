@@ -143,11 +143,11 @@
   z-index: 50;
 
   width: -moz-fit-content;
-  width:      fit-content;
+  width: fit-content;
   min-width: 80px;
   max-width: 250px;
   min-height: 28px;
-  padding: 10px 16px;
+  padding: 10px 12px;
 
   background-color: $color-basic-light;
   border-radius: 12px 12px 0 0;
@@ -174,13 +174,13 @@
     background-color: inherit;
 
     -webkit-mask-image: url("../img/sprite/angle-rotation.svg");
-            mask-image: url("../img/sprite/angle-rotation.svg");
+    mask-image: url("../img/sprite/angle-rotation.svg");
     -webkit-mask-position: center center;
-            mask-position: center center;
+    mask-position: center center;
     -webkit-mask-repeat: no-repeat;
-            mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
     -webkit-mask-size: 10px 10px;
-            mask-size: 10px 10px;
+    mask-size: 10px 10px;
 
     @media (min-width: $tablet-width) {
       right: -20px;
@@ -189,7 +189,7 @@
       height: 20px;
 
       -webkit-mask-size: 20px 20px;
-              mask-size: 20px 20px;
+      mask-size: 20px 20px;
     }
   }
 }
@@ -273,7 +273,7 @@
 
   @media (min-width: $tablet-width) {
     margin-right: 19px;
-    padding: 30px 69px 24px 40px;
+    padding: 31px 69px 23px 40px;
 
     font-size: 36px;
     line-height: 122%;
@@ -283,7 +283,7 @@
 
   @media (min-width: $desktop-width) {
     margin-right: 272px;
-    padding: 40px 50px 30px;
+    padding: 40px 50px 31px;
 
     font-size: 54px;
     line-height: 115%;
@@ -318,29 +318,31 @@
       background-color: inherit;
 
       -webkit-mask-image: url("../img/sprite/angle.svg");
-              mask-image: url("../img/sprite/angle.svg");
+      mask-image: url("../img/sprite/angle.svg");
       -webkit-mask-position: center center;
-              mask-position: center center;
+      mask-position: center center;
       -webkit-mask-repeat: no-repeat;
-              mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
       -webkit-mask-size: 20px 20px;
-              mask-size: 20px 20px;
+      mask-size: 20px 20px;
 
-      @media (min-width: $desktop-width) {
+      @media (min-width: $tablet-width) {
         right: -26px;
 
         width: 26px;
         height: 26px;
 
         -webkit-mask-size: 26px 26px;
-                mask-size: 26px 26px;
+        mask-size: 26px 26px;
       }
     }
   }
 
   @media (min-width: $desktop-width) {
     margin-right: 465px;
-    padding: 0 50px 35px;
+    padding: 0 50px 34px;
+
+    grid-template-columns: 1fr 199px;
   }
 }
 
@@ -383,7 +385,7 @@
     background-color: inherit;
 
     -webkit-mask-image: url("../img/sprite/angle.svg");
-            mask-image: url("../img/sprite/angle.svg");
+    mask-image: url("../img/sprite/angle.svg");
 
     @media (min-width: $tablet-width) {
       display: none;
@@ -418,7 +420,7 @@
     background-color: inherit;
 
     -webkit-mask-image: url("../img/sprite/angle.svg");
-            mask-image: url("../img/sprite/angle.svg");
+    mask-image: url("../img/sprite/angle.svg");
 
     @media (min-width: $tablet-width) {
       display: none;
