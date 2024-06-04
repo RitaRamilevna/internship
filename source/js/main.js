@@ -4,6 +4,7 @@ import { initHeroSlider } from './modules/init-hero-slider';
 import { initProgramsSlider } from './modules/init-program-slider';
 import { initNewsFeature } from './modules/init-news-slider';
 import { initialAccordion } from './modules/init-accordions';
+import { initReviewsSlider } from './modules/init-reviews-slider';
 
 document.addEventListener('DOMContentLoaded', () => {
   menuOpen();
@@ -12,4 +13,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroSlider();
   initProgramsSlider();
   initNewsFeature();
+  initReviewsSlider();
 });
