@@ -1,0 +1,373 @@
+.form__title {
+  margin: 0;
+  margin-bottom: 9px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 122%;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 31px;
+
+    font-size: 28px;
+    line-height: 100%;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 35px;
+
+    font-size: 32px;
+    line-height: 112%;
+  }
+}
+
+.form__intro {
+  margin: 0;
+  margin-bottom: 21px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+  color: $color-main-light;
+
+  opacity: 0.9;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 41px;
+
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 39px;
+
+    line-height: 162%;
+  }
+}
+
+.form__item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 21px;
+
+  gap: 11px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 20px;
+
+    gap: 12px;
+  }
+}
+
+.form__item:hover .form__label {
+  opacity: 1;
+}
+
+.form__item:active .form__label,
+.form__item:focus .form__label,
+.form__item:focus-visible .form__label {
+  outline: none;
+  opacity: 1;
+}
+
+.form__item:disabled .form__label,
+.form__item--disabled .form__label {
+  opacity: 0.6;
+}
+
+.form__item--invalid .form__label {
+  opacity: 0.8;
+}
+
+.form__item:hover .form__input {
+  border: 1px solid rgba($color-basic-light, 1);
+}
+
+.form__item:active .form__input,
+.form__item:focus .form__input,
+.form__item:focus-visible .form__input,
+.form__item:focus-within .form__input {
+  border: 1px solid rgba($color-basic-light, 1);
+  outline: none;
+}
+
+.form__item--invalid .form__input {
+  background-color: rgba(255, 94, 102, 0.2);
+  border: 1px solid $color-form-error;
+}
+
+.form__item:disabled .form__input,
+.form__item--disabled .form__input {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba($color-basic-light, 0.4);
+}
+
+.form__item-privacy {
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 19px;
+
+  gap: 10px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 39px;
+  }
+}
+
+.form__item:disabled .form__item-privacy .form__input-checkbox,
+.form__item--disabled .form__item-privacy .form__input-checkbox {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid $color-basic-light;
+}
+
+.form__item--invalid .form__item-privacy .form__input-checkbox {
+  background-color: rgba($color-form-error, 0.2);
+  border: 1px solid rgba($color-form-error, 0.7);
+}
+
+.form__item-privacy:hover .form__input-checkbox:checked {
+  background-color: transparent;
+}
+
+.form__item-privacy:hover .form__input-checkbox:checked::after {
+  background-image: url("../img/sprite/check-tick-white.svg");
+}
+
+.form__item-privacy:disabled .form__input-checkbox:checked,
+.form__item-privacy--disabled .form__input-checkbox:checked {
+  background-color: $color-disabled;
+  border-color: $color-disabled;
+}
+
+.form__item-privacy:disabled .form__input-checkbox:checked::after,
+.form__item-privacy--disabled .form__input-checkbox:checked::after {
+  background-image: url("../img/sprite/check-tick-white.svg");
+  opacity: 0.7;
+}
+
+.form__label {
+  display: block;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 117%;
+  color: $color-main-light;
+
+  opacity: 0.8;
+
+  @media (min-width: $tablet-width) {
+    font-size: 14px;
+    line-height: 143%;
+  }
+
+  @media (min-width: $desktop-width) {
+    line-height: 128%;
+  }
+}
+
+.form__input {
+  width: 100%;
+  min-height: 50px;
+  padding: 16px 25px;
+
+  color: $color-basic-light;
+
+  background-color: transparent;
+  border: 1px solid rgba($color-basic-light, 0.3);
+  border-radius: 8px;
+
+  appearance: none;
+}
+
+textarea.form__input {
+  height: 94px;
+  padding: 14px 14px;
+
+  resize: none;
+
+  @media (min-width: $tablet-width) {
+    height: 88px;
+  }
+
+  @media (min-width: $desktop-width) {
+    height: 90px;
+  }
+}
+
+.form__input-checkbox {
+  position: relative;
+
+  flex-shrink: 0;
+  align-self: center;
+  width: 20px;
+  height: 20px;
+  min-height: 0;
+  padding: 0;
+
+  background-color: $color-basic-light;
+  border-color: $color-basic-light;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+.form__input-checkbox:checked {
+  background-color: $color-basic-light;
+}
+
+.form__input-checkbox:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 10px;
+  height: 10px;
+
+  background-image: url("../img/sprite/check-tick.svg");
+  transform: translate(-50%, -50%);
+}
+
+.form__label-privacy {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 117%;
+  color: $color-basic-light;
+
+  @media (min-width: $tablet-width) {
+    line-height: 100%;
+  }
+}
+
+.form__label-privacy br {
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.form__item-select {
+  position: relative;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 20px;
+
+    gap: 8px;
+  }
+}
+
+.form__select-button {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  width: 96.2%;
+  min-height: 52px;
+  padding: 15px 40px 15px 25px;
+
+  color: $color-basic-light;
+
+  background-color: transparent;
+  border: 1px solid rgba($color-basic-light, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+
+  @media (min-width: $tablet-width) {
+    width: 100%;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    bottom: 50%;
+
+    width: 16px;
+    height: 16px;
+
+    background-image: url("../img/sprite/arrow-nav.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: translateY(-50%);
+
+    transition: transform 300ms ease;
+  }
+}
+
+.form__select-button--selected {
+  &:after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+}
+
+.form__select-list {
+  display: none;
+}
+
+.form__select-list--selected {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 99;
+
+  display: block;
+  width: 96.2%;
+  max-height: 200px;
+  margin-top: 4px;
+  padding: 0;
+  overflow: auto;
+
+  color: $color-main-dark;
+
+  background-color: $color-basic-light;
+  border-radius: 8px;
+
+  @media (min-width: $tablet-width) {
+    width: 100%;
+  }
+}
+
+.form__select-item {
+  min-height: 48px;
+  padding: 17px 20px;
+
+  cursor: pointer;
+
+  &:hover {
+    color: $color-main-basic;
+  }
+
+  &:active,
+  &:focus,
+  &:focus-visible {
+    color: $color-basic-light;
+
+    background-color: $color-main-basic;
+    outline: none;
+  }
+}
+
+.form__select-item--selected {
+  color: $color-basic-light;
+
+  background-color: $color-main-basic;
+
+  &:hover {
+    color: $color-main-light;
+  }
+}
+
+.form__button {
+  width: 96.2%;
+  min-height: 44px;
+
+  @media (min-width: $tablet-width) {
+    width: 97%;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 100%;
+  }
+}

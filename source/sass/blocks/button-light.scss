@@ -1,8 +1,8 @@
-.button {
+.button-light {
   position: relative;
 
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  justify-content: center;
   align-items: center;
   min-height: 44px;
   padding: 4px 4px 4px 20px;
@@ -12,25 +12,29 @@
   line-height: 100%;
   font-family: $ff-manrope;
   text-align: center;
-  color: $color-main-basic;
+  color: $color-basic-light;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.02em;
 
   background-color: transparent;
-  border: 1px solid $color-main-basic;
+  border: 1px solid $color-basic-light;
   border-radius: 30px;
   cursor: pointer;
 
   transition: all 0.3s ease-in-out;
 
   gap: 20px;
+  grid-template-columns: 1fr 34px;
 
   @media (min-width: $tablet-width) {
     min-height: 56px;
     padding: 4px 4px 4px 31px;
 
     font-size: 14px;
+
+    gap: 30px;
+    grid-template-columns: 1fr 46px;
   }
 
   @media (min-width: $desktop-width) {
@@ -39,14 +43,14 @@
   }
 }
 
-.button__icon {
+.button-light__icon-light {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 34px;
   height: 34px;
 
-  background-color: $color-main-basic;
+  background-color: $color-basic-light;
   border-radius: 50%;
 
   transition: all 0.3s ease-in-out;
@@ -57,62 +61,63 @@
   }
 }
 
-.button__icon svg {
+.button-light__icon-light svg {
   width: 8px;
   height: 8px;
 
   transition: all 0.3s ease-in-out;
 
+  stroke: $color-main-basic;
+  stroke-width: 1.6px;
+}
+
+.button-light:hover {
+  color: $color-main-basic;
+
+  background-color: $color-basic-light;
+  border: 1px solid $color-basic-light;
+}
+
+.button-light:hover .button-light__icon-light {
+  background-color: $color-main-basic;
+}
+
+.button-light:hover .button-light__icon-light svg {
+  transform: rotate(45deg);
+
   stroke: $color-basic-light;
 }
 
-.button:hover {
-  color: $color-basic-light;
+.button-light:active {
+  color: rgba($color-main-basic, 0.7);
 
-  background-color: $color-main-basic;
-  border: 1px solid $color-main-basic;
-}
-
-.button:hover .button__icon {
   background-color: $color-basic-light;
+  border: 1px solid $color-basic-light;
 }
 
-.button:hover .button__icon svg {
-  transform: rotate(45deg);
-
-  stroke: $color-main-basic;
-}
-
-.button:active {
-  color: rgba($color-basic-light, 0.7);
-
+.button-light:active .button-light__icon-light {
   background-color: $color-main-basic;
-  border: 1px solid $color-main-basic;
 }
 
-.button:active .button__icon {
-  background-color: $color-basic-light;
-}
-
-.button:active .button__icon svg {
+.button-light:active .button-light__icon-light svg {
   transform: rotate(45deg);
   opacity: 0.7;
 
-  stroke: $color-main-basic;
+  stroke: $color-basic-light;
 }
 
-.button:focus,
-.button:focus-visible {
+.button-light:focus,
+.button-light:focus-visible {
   outline: none;
 }
 
-.button:focus .button__icon svg,
-.button:focus-visible .button__icon svg {
+.button-light:focus .button-light__icon-light svg,
+.button-light:focus-visible .button-light__icon-light svg {
   transform: rotate(45deg);
 }
 
-.button:disabled,
-.button--disabled {
+.button-light:disabled,
+.button-light--disabled {
   color: $color-disabled;
 
   border: 1px solid $color-disabled;
@@ -120,12 +125,14 @@
   pointer-events: none;
 }
 
-.button:disabled .button__icon,
-.button--disabled .button__icon {
+.button-light:disabled .button-light__icon-light,
+.button-light--disabled .button-light__icon-light {
   background-color: $color-disabled;
 }
 
-.button:disabled .button__icon svg,
-.button--disabled .button__icon svg {
+.button-light:disabled .button-light__icon-light svg,
+.button-light--disabled .button-light__icon-light svg {
   opacity: 0.6;
+
+  stroke: $color-basic-light;
 }

@@ -23,11 +23,11 @@
 
       <nav class="header__nav nav nav--closed" aria-label="Главное меню навигации">
 
-        <a class="nav__logo logo" href="#" aria-current="page">
+        <div class="nav__logo logo">
           <picture>
             <img src="img/logo.svg#mobile" width="30" height="30" alt="Логотип компании Стажировка.">
           </picture>
-        </a>
+        </div>
 
         <button class="nav__toggle button-reset" type="button">
           <span>Меню</span>
@@ -39,50 +39,50 @@
         <ul class="nav__list list-reset">
 
           <li class="nav__item">
-            <a class="nav__link link-reset" href="#">О проекте</a>
+            <a class="nav__link link-reset" href="#about">О проекте</a>
           </li>
           <li class="nav__item  nav__item--closed">
-            <a class="nav__link nav__link--icon link-reset" href="#">Программы</a>
+            <a class="nav__link nav__link--icon link-reset" href="#programs">Программы</a>
             <ul class="nav__sub-list list-reset">
               <li class="nav__sub-item">
-                <a class="nav__sub-link nav__sub-link--current link-reset" href="#">Стажировки</a>
+                <a class="nav__sub-link nav__sub-link--current link-reset" href="#programs-internships">Стажировки</a>
               </li>
               <li class="nav__sub-item">
-                <a class="nav__sub-link link-reset" href="#">Волонтёрство</a>
+                <a class="nav__sub-link link-reset" href="#programs-volunteering">Волонтёрство</a>
               </li>
               <li class="nav__sub-item">
-                <a class="nav__sub-link link-reset" href="#">Учёба</a>
+                <a class="nav__sub-link link-reset" href="#programs-study">Учёба</a>
               </li>
               <li class="nav__sub-item">
-                <a class="nav__sub-link link-reset" href="#">Религия</a>
+                <a class="nav__sub-link link-reset" href="#programs-religion">Религия</a>
               </li>
             </ul>
           </li>
           <li class="nav__item">
-            <a class="nav__link link-reset" href="#">Как поехать</a>
+            <a class="nav__link link-reset" href="#grant">Как поехать</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link link-reset" href="#">Отзывы</a>
+            <a class="nav__link link-reset" href="#reviews">Отзывы</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link nav__link--icon link-reset" href="#">Новости</a>
+            <a class="nav__link nav__link--icon link-reset" href="#news">Новости</a>
             <ul class="nav__sub-list list-reset">
               <li class="nav__sub-item">
-                <a class="nav__sub-link link-reset" href="#">Стажировки</a>
+                <a class="nav__sub-link link-reset" href="#news" data-filter="volunteering">Волонтёрство</a>
               </li>
               <li class="nav__sub-item">
-                <a class="nav__sub-link link-reset" href="#">Волонтёрство</a>
+                <a class="nav__sub-link link-reset" href="#news" data-filter="internships">Стажировки</a>
               </li>
               <li class="nav__sub-item">
-                <a class="nav__sub-link link-reset" href="#">Учёба</a>
+                <a class="nav__sub-link link-reset" href="#news" data-filter="career">Карьера</a>
               </li>
               <li class="nav__sub-item">
-                <a class="nav__sub-link link-reset" href="#">Религия</a>
+                <a class="nav__sub-link link-reset" href="#news" data-filter="travelling">Путешествия</a>
               </li>
             </ul>
           </li>
           <li class="nav__item">
-            <a class="nav__link link-reset" href="#">Контакты</a>
+            <a class="nav__link link-reset" href="#contacts">Контакты</a>
           </li>
         </ul>
 
@@ -312,7 +312,7 @@
             <div class="programs__swiper swiper">
               <ul class="programs__list list-reset swiper-wrapper">
 
-                <li class="programs__item swiper-slide">
+                <li class="programs__item swiper-slide" id="programs-internships">
 
                   <div class="programs__image">
                     <picture>
@@ -339,7 +339,7 @@
 
                 </li>
 
-                <li class="programs__item swiper-slide">
+                <li class="programs__item swiper-slide" id="programs-volunteering">
 
                   <div class="programs__image">
                     <picture>
@@ -365,7 +365,7 @@
                   </div>
                 </li>
 
-                <li class="programs__item swiper-slide">
+                <li class="programs__item swiper-slide" id="programs-study">
 
                   <div class="programs__image">
                     <picture>
@@ -391,7 +391,7 @@
                   </div>
                 </li>
 
-                <li class="programs__item swiper-slide">
+                <li class="programs__item swiper-slide" id="programs-religion">
 
                   <div class="programs__image">
                     <picture>
@@ -404,7 +404,7 @@
                     </picture>
                   </div>
 
-                  <h3 class="programs__subtitle subtitle">Стажировки</h3>
+                  <h3 class="programs__subtitle subtitle">Религия</h3>
 
                   <div class="programs__content">
                     <p>Получите незаменимый опыт работы в крупнейших мировых компаниях.</p>
@@ -1164,21 +1164,197 @@
         </div>
       </section>
 
-      <div data-test="contacts">contacts</div>
-      <div data-test="form">form</div>
+      <section class="contacts" id="contacts" data-test="contacts">
+
+        <div class="contacts__container container">
+
+          <div class="contacts__wrapper">
+
+            <h2 class="contacts__title title">Контакты</h2>
+
+            <ul class="contacts__list list-reset">
+
+              <li class="contacts__item contacts__item--address">
+                <h3 class="contacts__item-title">центральный офис</h3>
+                <address class="contacts__item-description">
+                  <a class="contacts__item-adress link-reset" href="https://maps.app.goo.gl/SP3JAtVg6pRVUUWH8">г. Новосибирск, ул. Щетинкина 68, культурный центр</a>
+                </address>
+              </li>
+
+              <li class="contacts__item contacts__item--phone">
+                <h3 class="contacts__item-title">Телефон</h3>
+                <a class="contacts__item-description link-reset" href="tel:+796387687676">+7 963 876 876 76</a>
+              </li>
+
+              <li class="contacts__item contacts__item--email">
+                <h3 class="contacts__item-title">Email</h3>
+                <a class="contacts__item-description link-reset" href="mailto:info@stazh.ru">Info@stazh.ru</a>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <div class="contacts__map map">
+            <a class="map__image link-reset" href="https://maps.app.goo.gl/SP3JAtVg6pRVUUWH8">
+              <picture>
+                <source type="image/webp" media="(min-width: 1440px)" srcset="img/contacts/map-desktop@1.webp 1x, img/contacts/map-desktop@2.webp 2x" width="1240" height="486">
+                <source type="image/webp" media="(min-width: 768px)" srcset="img/contacts/map-tablet@1.webp 1x, img/contacts/map-tablet@2.webp 2x" width="678" height="500">
+                <source type="image/webp" srcset="img/contacts/map-mobile@1.webp 1x, img/contacts/map-mobile@2.webp 2x" width="290" height="240">
+                <source type="image/png" media="(min-width: 1440px)" srcset="img/contacts/map-desktop@1.png, img/contacts/map-desktop@2.png 2x" width="1240" height="486">
+                <source type="image/png" media="(min-width: 768px)" srcset="img/contacts/map-tablet@1.png, img/contacts/map-tablet@2.png 2x" width="678" height="500">
+                <img src="img/contacts/map-mobile@1.png" srcset="img/contacts/map-mobile@2.png 2x" alt="Наш адрес: г. Новосибирск, ул. Щетинкина 68, культурный центр." width="290" height="240">
+              </picture>
+            </a>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="feedback" id="feedback" data-test="form">
+        <h2 class="visually-hidden">Форма обратной связи.</h2>
+        <div class="feedback__container container">
+          <div class="feedback__wrapper">
+            <fieldset class="feedback__form form">
+
+              <legend class="visually-hidden">Форма обратной связи</legend>
+
+              <h3 class="form__title">Напишите нам</h3>
+              <p class="form__intro">Оставьте ваши контакты, если у вас остались вопросы — мы на них ответим!</p>
+
+              <form class="form__form" action="https://echo.htmlacademy.ru" method="post">
+
+                <div class="form__item">
+                  <label class="form__label  form__label-name" for="name">Имя</label>
+                  <input class="form__input form__input-name" type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form__item">
+                  <label class="form__label  form__label-phone" for="phone">Телефон</label>
+                  <input class="form__input form__input-phone" type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form__item">
+                  <label class="form__label  form__label-message" for="message">Ваше сообщение</label>
+                  <textarea class="form__input form__input-message" id="message" name="message" rows="10" required></textarea>
+                </div>
+
+                <div class="form__item form__item-select">
+                  <div class="form__label form__label-city">Выберите город</div>
+                  <button class="form__input form__select-button" type="button" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="visually-hidden">Город не выбран</span>
+                  </button>
+                  <ul class="form__select-list list-reset" role="listbox" aria-hidden="true">
+                    <li class="form__select-item form__select-item--empty form__select-item--selected" tabindex="0" data-value="empty" role="option" aria-selected="true">
+                      <span class="visually-hidden">Город не выбран</span>
+                    </li>
+                    <li class="form__select-item" tabindex="0" data-value="moscow" role="option">Москва</li>
+                    <li class="form__select-item" tabindex="0" data-value="saint-petersburg" role="option">Санкт-Петербург</li>
+                    <li class="form__select-item" tabindex="0" data-value="tbilisi" role="option">Тбилиси</li>
+                    <li class="form__select-item" tabindex="0" data-value="sterlitamak" role="option">Стерлитамак</li>
+                  </ul>
+                  <input type="hidden" name="city" value="empty" required>
+                </div>
+
+                <div class="form__item form__item-privacy">
+                  <input class="form__input form__input-checkbox" type="checkbox" id="privacy" name="privacy" required>
+                  <label class="form__label  form__label-privacy" for="privacy">Я согласен на обработку моих персональных <br>данных</label>
+                </div>
+
+                <button class="form__button button-light" type="submit">
+                  <span>Отправить</span>
+                  <span class="button-light__icon-light">
+                    <svg width="10" height="10" viewBox="0 0 10 10" role="img" aria-hidden="true" focusable="false">
+                      <use href="/__spritemap#sprite-button-arrow"></use>
+                    </svg>
+                  </span>
+                </button>
+
+              </form>
+            </fieldset>
+          </div>
+        </div>
+      </section>
 
     </main>
 
-    <div data-test="footer">footer</div>
+    <footer class="footer" id="footer" data-test="footer">
+
+      <div class="footer__container container">
+
+        <div class="footer__wrapper">
+
+          <div class="footer__navigation footer-nav">
+
+            <div class="footer-nav__logo logo">
+              <picture>
+                <img src="img/logo.svg#mobile" width="52" height="52" alt="Логотип компании Стажировка.">
+              </picture>
+            </div>
+
+            <ul class="footer-nav__list list-reset">
+              <li class="footer-nav__item">
+                <a class="footer-nav__link link-reset" href="#about">О проекте</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link link-reset" href="#programs">Программы</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link link-reset" href="#grant">Как поехать</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link link-reset" href="#reviews">Отзывы</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link link-reset" href="#news">Новости</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link link-reset" href="#contacts">Контакты</a>
+              </li>
+            </ul>
+
+          </div>
+
+          <div class="footer__privacy">
+            <a class="footer__privacy-link link-reset" href="#">Политика конфиденциальности</a>
+            <span>Стажировка © 2023 Все права защищены</span>
+          </div>
+
+          <ul class="footer__social social list-reset">
+            <li class="social__item">
+              <a class="social__link link" href="https://vk.com/htmlacademy" aria-label="Вконтакте." target="_blank" rel="noreferrer noopener">
+                <svg class="social__icon" width="26" height="26">
+                  <title class="visually-hidden">Иконка соцсети Вконтакте.</title>
+                  <use href="/__spritemap#sprite-vk"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link link" href="https://ok.ru/htmlacademy" aria-label="Одноклассники." target="_blank" rel="noreferrer noopener">
+                <svg class="social__icon" width="26" height="26">
+                  <title class="visually-hidden">Иконка соцсети Одноклассники.</title>
+                  <use href="/__spritemap#sprite-ok"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link link" href="https://www.instagram.com/htmlacademy/" aria-label="reddit." target="_blank" rel="noreferrer noopener">
+                <svg class="social__icon" width="26" height="26">
+                  <title class="visually-hidden">Иконка соцсети Реддит.</title>
+                  <use href="/__spritemap#sprite-reddit"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </footer>
 
   </div>
-
-  <!-- пример использования спрайта -->
-  <!-- <img src="/__spritemap#sprite-logo-view" alt="Это спрайт">
-  <svg>
-    <use href="/__spritemap#sprite-user"></use>
-  </svg> -->
-  <!-- примеры требуемых атрибутов data-test="*" -->
 
   <script type="module" src="js/main.js"></script>
 </body>

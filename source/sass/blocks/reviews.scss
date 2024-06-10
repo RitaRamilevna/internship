@@ -18,15 +18,11 @@
 .reviews__wrapper {
   display: grid;
 
-  grid-template-columns: 70.7% auto;
+  grid-template-columns: auto auto;
   grid-template-rows: repeat(3, auto);
 
-  @media (min-width: $tablet-width) {
-    grid-template-columns: 70.7% auto 45px;
-  }
-
-  @media (min-width: $tablet-width) {
-    grid-template-columns: 70.7% auto;
+  @media (min-width: $desktop-width) {
+    grid-template-columns: auto 60px;
   }
 }
 
@@ -47,17 +43,23 @@
 
 .reviews__slider-navigation {
   @media (min-width: $tablet-width) {
-    grid-column: -3 / -2;
+    margin-right: 45px;
+
+    grid-column: -2 / -1;
     grid-row: -2 / -1;
   }
 
   @media (min-width: $desktop-width) {
+    margin-right: 0;
+
     grid-column: -2 / -1;
   }
 }
 
 .reviews__button-navigation {
-  margin-bottom: 1px;
+  @media (min-width: $tablet-width) {
+    margin-bottom: 1px;
+  }
 }
 
 .reviews__swiper.swiper {
@@ -265,7 +267,7 @@
 
     display: block;
     align-self: center;
-    width: 83%;
+    width: 78%;
     height: 2px;
 
     background-color: rgba($color-main-basic, 0.2);

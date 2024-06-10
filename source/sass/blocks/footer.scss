@@ -1,0 +1,150 @@
+.footer__container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @media (min-width: $desktop-width) {
+    padding-top: 60px;
+  }
+}
+
+.footer__wrapper {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  grid-template-columns: 1fr;
+
+  @media (min-width: $tablet-width) {
+    justify-content: space-between;
+
+    grid-template-columns: repeat(2, auto);
+  }
+
+  @media (min-width: $desktop-width) {
+    row-gap: 24px;
+  }
+}
+
+.footer__navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+
+  gap: 10px;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 24px;
+
+    grid-column: -1 / 1;
+  }
+
+  @media (min-width: $desktop-width) {
+    justify-content: flex-start;
+    margin-bottom: 0;
+
+    gap: 52px;
+    grid-column: 1 / 2;
+  }
+}
+
+.footer__privacy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+
+  gap: 10px;
+
+  @media (min-width: $tablet-width) {
+    align-items: flex-start;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    flex-direction: row;
+    justify-content: space-between;
+
+    grid-column: -1 / 1;
+  }
+}
+
+.footer__privacy-link {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 117%;
+
+  border-bottom: 1px solid $color-main-dark;
+
+  @media (min-width: $desktop-width) {
+    order: 2;
+    padding-bottom: 2px;
+
+    font-size: 14px;
+    line-height: 129%;
+  }
+
+  &:hover {
+    color: $color-main-basic;
+
+    border-bottom: 1px solid $color-main-basic;
+    opacity: 0.7;
+  }
+
+  &:focus,
+  &:focus-visible {
+    color: $color-main-basic;
+
+    border-bottom: 1px solid $color-main-basic;
+    outline: none;
+  }
+
+  &:active {
+    color: $color-basic-accent;
+
+    border-bottom: 1px solid $color-basic-accent;
+  }
+}
+
+.footer__privacy span {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 117%;
+
+  opacity: 0.6;
+
+  @media (min-width: $desktop-width) {
+    order: 1;
+
+    font-size: 14px;
+    line-height: 139%;
+
+    opacity: 1;
+  }
+}
+
+.footer__social {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+
+  gap: 10px;
+
+  @media (min-width: $tablet-width) {
+    justify-content: end;
+  }
+
+  @media (min-width: $desktop-width) {
+    gap: 20px;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+}

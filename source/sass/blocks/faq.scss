@@ -64,7 +64,7 @@
   height: 100%;
   min-height: 80px;
   margin: 0;
-  padding: 21px 15px 19px 15px;
+  padding: 21px 15px 19px;
 
   font-weight: 400;
   font-size: 16px;
@@ -80,7 +80,7 @@
 
   @media (min-width: $tablet-width) {
     min-height: 100px;
-    padding: 31px 30px 29px 30px;
+    padding: 31px 30px 29px;
 
     font-size: 22px;
     line-height: 118%;
@@ -88,7 +88,7 @@
 
   @media (min-width: $desktop-width) {
     min-height: 120px;
-    padding: 41px 40px 39px 40px;
+    padding: 41px 40px 39px;
 
     font-size: 28px;
     line-height: 121%;
@@ -166,29 +166,29 @@
     width: 1px;
     height: 18px;
   }
+}
 
-  &--active {
-    background-color: $color-basic-light;
-    outline: 1px solid $color-basic-light;
+.faq__accordion-icon--active {
+  background-color: $color-basic-light;
+  outline: 1px solid $color-basic-light;
 
-    &::before,
-    &::after {
-      background-color: $color-main-basic;
-      transform: translate(-50%, -50%);
+  &::before,
+  &::after {
+    background-color: $color-main-basic;
+    transform: translate(-50%, -50%);
 
-      transition: all 0.3s ease;
-    }
+    transition: all 0.3s ease;
+  }
 
-    &::before {
-      z-index: 5;
+  &::before {
+    z-index: 5;
 
-      width: 18px;
-      height: 1px;
-    }
+    width: 18px;
+    height: 1px;
+  }
 
-    &::after {
-      display: none;
-    }
+  &::after {
+    display: none;
   }
 }
 
@@ -283,7 +283,7 @@
   padding: 0 17px 20px 15px;
 
   @media (min-width: $tablet-width) {
-    padding: 0 30px 30px 30px;
+    padding: 0 30px 30px;
   }
 
   @media (min-width: $desktop-width) {

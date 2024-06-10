@@ -141,8 +141,6 @@
 .hero__pagination-wrapper {
   position: relative;
   z-index: 50;
-
-  width: -moz-fit-content;
   width: fit-content;
   min-width: 80px;
   max-width: 250px;
@@ -172,14 +170,9 @@
     height: 10px;
 
     background-color: inherit;
-
-    -webkit-mask-image: url("../img/sprite/angle-rotation.svg");
     mask-image: url("../img/sprite/angle-rotation.svg");
-    -webkit-mask-position: center center;
     mask-position: center center;
-    -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
-    -webkit-mask-size: 10px 10px;
     mask-size: 10px 10px;
 
     @media (min-width: $tablet-width) {
@@ -187,8 +180,6 @@
 
       width: 20px;
       height: 20px;
-
-      -webkit-mask-size: 20px 20px;
       mask-size: 20px 20px;
     }
   }
@@ -210,9 +201,7 @@
   gap: 4px;
 }
 
-.hero__swiper
-  .swiper-pagination-horizontal.swiper-pagination-bullets
-  .swiper-pagination-bullet {
+.hero__swiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
   width: 8px;
   height: 8px;
 
@@ -246,9 +235,7 @@
   }
 }
 
-.hero__swiper
-  .swiper-pagination-horizontal.swiper-pagination-bullets
-  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+.hero__swiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: $color-basic-accent;
   border: 1px solid $color-basic-accent;
 }
@@ -316,14 +303,9 @@
       height: 20px;
 
       background-color: inherit;
-
-      -webkit-mask-image: url("../img/sprite/angle.svg");
       mask-image: url("../img/sprite/angle.svg");
-      -webkit-mask-position: center center;
       mask-position: center center;
-      -webkit-mask-repeat: no-repeat;
       mask-repeat: no-repeat;
-      -webkit-mask-size: 20px 20px;
       mask-size: 20px 20px;
 
       @media (min-width: $tablet-width) {
@@ -331,8 +313,6 @@
 
         width: 26px;
         height: 26px;
-
-        -webkit-mask-size: 26px 26px;
         mask-size: 26px 26px;
       }
     }
@@ -383,8 +363,6 @@
     height: 10px;
 
     background-color: inherit;
-
-    -webkit-mask-image: url("../img/sprite/angle.svg");
     mask-image: url("../img/sprite/angle.svg");
 
     @media (min-width: $tablet-width) {
@@ -418,8 +396,6 @@
     height: 10px;
 
     background-color: inherit;
-
-    -webkit-mask-image: url("../img/sprite/angle.svg");
     mask-image: url("../img/sprite/angle.svg");
 
     @media (min-width: $tablet-width) {

@@ -169,14 +169,9 @@
     height: 18px;
 
     background-color: inherit;
-
-    -webkit-mask-image: url("../img/sprite/angle-rotation.svg");
     mask-image: url("../img/sprite/angle-rotation.svg");
-    -webkit-mask-position: center center;
     mask-position: center center;
-    -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
-    -webkit-mask-size: 18px 18px;
     mask-size: 18px 18px;
   }
 }

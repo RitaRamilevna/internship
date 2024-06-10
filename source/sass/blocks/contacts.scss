@@ -1,0 +1,151 @@
+.contacts {
+  color: $color-basic-light;
+
+  background-color: $color-main-basic;
+}
+
+.contacts__container {
+  padding-top: 76px;
+  padding-bottom: 70px;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 101px;
+    padding-bottom: 100px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
+
+.contacts__wrapper {
+  @media (min-width: $desktop-width) {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+}
+
+.contacts__title {
+  margin-bottom: 35px;
+
+  color: $color-basic-light;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 0;
+  }
+}
+
+.contacts__list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+
+  gap: 21px;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+  }
+
+  @media (min-width: $desktop-width) {
+    align-items: flex-start;
+
+    gap: 53px;
+  }
+}
+
+.contacts__item {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $desktop-width) {
+    gap: 24px;
+  }
+
+  &--address {
+    @media (min-width: $desktop-width) {
+      max-width: 263px;
+    }
+  }
+}
+
+.contacts__item-title {
+  margin: 0;
+  margin-bottom: 14px;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  color: $color-main-light;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+
+  opacity: 0.8;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 23px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 0;
+  }
+}
+
+.contacts__item-description {
+  margin: 0;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  @media (min-width: $desktop-width) {
+    align-self: center;
+
+    font-size: 16px;
+    line-height: 162%;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:focus,
+  &:focus-visible {
+    color: $color-main-dark;
+
+    border-bottom: 1px solid $color-main-dark;
+    outline: none;
+  }
+
+  &:active {
+    color: $color-basic-light;
+
+    border-bottom: 1px solid $color-basic-light;
+  }
+
+  &:disabled,
+  &--disabled {
+    color: $color-disabled;
+  }
+}
+
+.contacts__map {
+  padding-top: 30px;
+
+  border-top: 2px solid rgba($color-basic-light, 0.2);
+
+  @media (min-width: $desktop-width) {
+    padding-top: 40px;
+  }
+}

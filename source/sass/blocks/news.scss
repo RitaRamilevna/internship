@@ -70,6 +70,8 @@
   border-radius: 20px;
   opacity: 0.6;
 
+  transition: opacity 0.3s ease, border 0.3s ease;
+
   @media (min-width: $tablet-width) {
     padding: 14px 20px;
 
@@ -260,14 +262,9 @@
     height: 16px;
 
     background-color: inherit;
-
-    -webkit-mask-image: url("../img/sprite/angle-rotation.svg");
     mask-image: url("../img/sprite/angle-rotation.svg");
-    -webkit-mask-position: center center;
     mask-position: center center;
-    -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
-    -webkit-mask-size: 16px 16px;
     mask-size: 16px 16px;
   }
 
@@ -331,14 +328,9 @@
     height: 16px;
 
     background-color: inherit;
-
-    -webkit-mask-image: url("../img/sprite/angle-rotation.svg");
     mask-image: url("../img/sprite/angle-rotation.svg");
-    -webkit-mask-position: center center;
     mask-position: center center;
-    -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
-    -webkit-mask-size: 16px 16px;
     mask-size: 16px 16px;
   }
 }
@@ -394,14 +386,9 @@
     height: 16px;
 
     background-color: inherit;
-
-    -webkit-mask-image: url("../img/sprite/angle-rotation.svg");
     mask-image: url("../img/sprite/angle-rotation.svg");
-    -webkit-mask-position: center center;
     mask-position: center center;
-    -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
-    -webkit-mask-size: 16px 16px;
     mask-size: 16px 16px;
   }
 }
@@ -474,10 +461,8 @@
   color: rgba($color-main-basic, 0.5);
 
   background-color: transparent;
-  border: 2px solid transparent;
   border: none;
   opacity: 1;
-
   transition: all 0.3s ease-in-out;
 
   @media (min-width: $tablet-width) {
@@ -508,9 +493,7 @@
   }
 }
 
-.news__slider-navigation
-  .news__pagination
-  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+.news__slider-navigation .news__pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
   color: $color-basic-light;
 
   background-color: $color-main-basic;
