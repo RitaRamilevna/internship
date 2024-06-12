@@ -4,10 +4,13 @@ import { initHeroSlider } from './modules/init-hero-slider';
 import { initProgramsSlider } from './modules/init-program-slider';
 import { initNewsFeature } from './modules/init-news-slider';
 import { initialAccordion } from './modules/init-accordions';
-import { initReviewsSlider } from './modules/init-reviews-slider'; import { initCustomSelect } from './modules/init-select';
+import { initReviewsSlider } from './modules/init-reviews-slider';
+import { initModal } from './modules/init-modal';
+import { initCustomSelect } from './modules/init-select';
 import { validateForm } from './modules/form-validate';
 
 document.addEventListener('DOMContentLoaded', () => {
+
   menuOpen();
   initialAccordion();
   initNavigationToggle();
@@ -15,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProgramsSlider();
   initNewsFeature();
   initReviewsSlider();
+  initModal();
   initCustomSelect();
-
   validateForm();
 });

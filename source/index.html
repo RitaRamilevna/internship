@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="sass/style.scss">
 </head>
 
-<body class="body">
+<body class="page-body">
   <div class="wrapper">
 
     <h1 class="visually-hidden">Стажировка — проект для получения опыта зарубежом.</h1>
@@ -240,14 +240,14 @@
             <div class="about__content">
               <h3>Наша цель</h3>
               <p>Наша деятельность направлена на повышение квалификации молодых специалистов на ранних и средних стадиях карьеры, предоставляя им инструменты для решения сложных проблем, с которыми сталкиваются в мире. Цель центра — наделить этих людей способностью инициировать значимые изменения.</p>
-              <a class="about__button button" href="#form">
+              <button class="about__button button button-reset" type="button">
                 <span>Подробнее о проекте</span>
                 <span class="button__icon">
                   <svg width="10" height="10" viewBox="0 0 10 10" role="img" aria-hidden="true" focusable="false">
                     <use href="/__spritemap#sprite-button-arrow"></use>
                   </svg>
                 </span>
-              </a>
+              </button>
             </div>
 
           </div>
@@ -1225,18 +1225,18 @@
 
               <form class="form__form" action="https://echo.htmlacademy.ru" method="post">
 
-                <div class="form__item">
+                <div class="form__item form__item-name">
                   <label class="form__label  form__label-name" for="name">Имя</label>
                   <input class="form__input form__input-name" type="text" id="name" name="name" required>
                 </div>
 
-                <div class="form__item">
+                <div class="form__item form__item-phone">
                   <label class="form__label  form__label-phone" for="phone">Телефон</label>
                   <input class="form__input form__input-phone" type="tel" id="phone" name="phone" required>
                 </div>
 
-                <div class="form__item">
-                  <label class="form__label  form__label-message" for="message">Ваше сообщение</label>
+                <div class="form__item form__item-message">
+                  <label class="form__label form__label-message" for="message">Ваше сообщение</label>
                   <textarea class="form__input form__input-message" id="message" name="message" rows="10" required></textarea>
                 </div>
 
@@ -1254,7 +1254,7 @@
                     <li class="form__select-item" tabindex="0" data-value="tbilisi" role="option">Тбилиси</li>
                     <li class="form__select-item" tabindex="0" data-value="sterlitamak" role="option">Стерлитамак</li>
                   </ul>
-                  <input type="hidden" name="city" value="empty" required>
+                  <input type="hidden" name="city" value="empty">
                 </div>
 
                 <div class="form__item form__item-privacy">
@@ -1353,6 +1353,75 @@
       </div>
 
     </footer>
+
+    <div class="page-body__modal modal modal--close">
+      <div class="modal__container">
+
+        <button class="modal__close-button button-reset" type="button">
+          <span class="visually-hidden">Закрыть.</span>
+          <span class="modal__button-icon">
+            <svg width="16" height="16" role="img" aria-hidden="true">
+              <use href="/__spritemap#sprite-modal-closed"></use>
+            </svg>
+          </span>
+        </button>
+
+        <section class="modal__section">
+          <h2 class="visually-hidden">Модальное окно формы обратной связи.</h2>
+          <fieldset class="modal__form form form--light">
+            <legend class="visually-hidden">Форма обратной связи</legend>
+
+            <h3 class="form__title form__title--light">Напишите нам</h3>
+            <p class="form__intro form__intro--light">Оставьте ваши контакты, если у вас остались вопросы — мы на них ответим!</p>
+
+            <form class="form__form" action="https://echo.htmlacademy.ru" method="post">
+
+              <div class="form__item form__item-light">
+                <label class="form__label form__label-light form__label-name" for="name-modal">Имя</label>
+                <input class="form__input form__input-light form__input-name" type="text" id="name-modal" name="name" required>
+              </div>
+
+              <div class="form__item form__item-light">
+                <label class="form__label form__label-light form__label-phone" for="phone-modal">Телефон</label>
+                <input class="form__input form__input-light form__input-phone" type="tel" id="phone-modal" name="phone" required>
+              </div>
+
+              <div class="form__item form__item-select">
+                <div class="form__label form__label-city form__label-light">Выберите город</div>
+                <button class="form__input form__select-button form__select-button-light" type="button" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="visually-hidden">Город не выбран</span>
+                </button>
+                <ul class="form__select-list form__select-list-light list-reset" role="listbox" aria-hidden="true">
+                  <li class="form__select-item form__select-item--empty form__select-item--selected" tabindex="0" data-value="empty" role="option" aria-selected="true">
+                    <span class="visually-hidden">Город не выбран</span>
+                  </li>
+                  <li class="form__select-item" tabindex="0" data-value="moscow" role="option">Москва</li>
+                  <li class="form__select-item" tabindex="0" data-value="saint-petersburg" role="option">Санкт-Петербург</li>
+                  <li class="form__select-item" tabindex="0" data-value="tbilisi" role="option">Тбилиси</li>
+                  <li class="form__select-item" tabindex="0" data-value="sterlitamak" role="option">Стерлитамак</li>
+                </ul>
+                <input type="hidden" name="city" value="empty">
+              </div>
+
+              <div class="form__item form__item-privacy">
+                <input class="form__input form__input-checkbox form__input-checkbox-light" type="checkbox" id="privacy-modal" name="privacy" required>
+                <label class="form__label form__label-privacy form__label-privacy-light" for="privacy-modal">Я согласен на обработку моих персональных <br>данных</label>
+              </div>
+
+              <button class="form__button form__button-light button" type="submit">
+                <span>Отправить</span>
+                <span class="button__icon">
+                  <svg width="10" height="10" viewBox="0 0 10 10" role="img" aria-hidden="true" focusable="false">
+                    <use href="/__spritemap#sprite-button-arrow"></use>
+                  </svg>
+                </span>
+              </button>
+
+            </form>
+          </fieldset>
+        </section>
+      </div>
+    </div>
 
   </div>
 

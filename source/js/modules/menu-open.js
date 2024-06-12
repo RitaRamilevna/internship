@@ -9,7 +9,7 @@ function menuOpen() {
     nav.classList.toggle('nav--closed');
     navTogglerIcon.classList.toggle('nav--opened');
     navTogglerIcon.classList.toggle('nav--closed');
-    body.classList.toggle('body--overlay');
+    body.classList.toggle('page-body--overlay');
 
     const navItems = nav.querySelectorAll('.nav__item--closed');
     navItems.forEach((item) => {
@@ -29,7 +29,7 @@ function menuOpen() {
       nav.classList.add('nav--closed');
       navTogglerIcon.classList.remove('nav--opened');
       navTogglerIcon.classList.add('nav--closed');
-      body.classList.remove('body--overlay');
+      body.classList.remove('page-body--overlay');
 
       setTimeout(() => {
         const openedItems = nav.querySelectorAll('.nav__item--opened');
