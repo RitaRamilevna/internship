@@ -126,7 +126,7 @@ export function initCustomSelect() {
           cityField.classList.add('form__item--invalid');
           selectWrapper.classList.add('form__select-wrapper--invalid');
           selectWrapper.dataset.errorMessage = 'Пожалуйста, выберите город.';
-          selectElement.setCustomValidity('Пожалуйста, выберите город.'); // Добавлено
+          selectElement.setCustomValidity('Пожалуйста, выберите город.');
         });
 
         selectElement.addEventListener('change', () => {
@@ -158,7 +158,6 @@ export function initCustomSelect() {
           }
         });
 
-        //selectElement.style.display = 'none';
       }
     });
   });

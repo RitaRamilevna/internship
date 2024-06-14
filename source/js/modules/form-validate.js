@@ -9,8 +9,8 @@ export const validateForm = () => {
     const messageInput = form.querySelector('.form__input-message');
     const privacyCheckbox = form.querySelector('.form__input-checkbox');
     const citySelect = form.querySelector('.form__select-wrapper');
-    const selectElement = form.querySelector('select[name="city"]');
     const submitButton = form.querySelector('button[type="submit"]');
+    const cityButton = form.querySelector('.form__select-button');
 
     const validateName = () => {
       if (nameInput) {
@@ -72,15 +72,15 @@ export const validateForm = () => {
     };
 
     const validateCity = () => {
-      const cityButton = form.querySelector('.form__select-button');
+
       const isValidCity = cityButton && cityButton.textContent.trim() !== 'Город не выбран';
 
       if (!isValidCity) {
-        selectElement.setCustomValidity('');
+        cityButton.setCustomValidity('Пожалуйста, выберите город.');
         citySelect.classList.add('form__select-wrapper--invalid');
         citySelect.closest('.form__item, .modal__item, .form__item-select').classList.add('form__item--invalid');
       } else {
-        selectElement.setCustomValidity('');
+        cityButton.setCustomValidity('');
         citySelect.classList.remove('form__select-wrapper--invalid');
         citySelect.closest('.form__item, .modal__item, .form__item-select').classList.remove('form__item--invalid');
       }
