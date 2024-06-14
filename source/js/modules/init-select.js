@@ -79,6 +79,12 @@ export function initCustomSelect() {
 
             const cityField = selectButton.closest('.form__item');
             cityField.classList.remove('form__item--invalid');
+
+            if (selectedOption.value === 'empty') {
+              selectButton.classList.add('form__select-button--empty');
+            } else {
+              selectButton.classList.remove('form__select-button--empty');
+            }
           });
 
           selectItem.addEventListener('keydown', (event) => {

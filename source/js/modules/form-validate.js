@@ -72,67 +72,59 @@ export const validateForm = () => {
     };
 
     const validateCity = () => {
-
       const isValidCity = cityButton && cityButton.textContent.trim() !== 'Город не выбран';
 
       if (!isValidCity) {
         cityButton.setCustomValidity('Пожалуйста, выберите город.');
         citySelect.classList.add('form__select-wrapper--invalid');
         citySelect.closest('.form__item, .modal__item, .form__item-select').classList.add('form__item--invalid');
+
+        cityButton.classList.add('form__select-button--empty');
+
+        if (cityButton.classList.contains('form__select-button-light')) {
+          cityButton.innerHTML = '<span class="visually-hidden">Город не выбран</span>';
+        }
       } else {
         cityButton.setCustomValidity('');
         citySelect.classList.remove('form__select-wrapper--invalid');
         citySelect.closest('.form__item, .modal__item, .form__item-select').classList.remove('form__item--invalid');
+
+        cityButton.classList.remove('form__select-button--empty');
+
+        if (cityButton.classList.contains('form__select-button-light')) {
+          cityButton.textContent = cityButton.textContent.replace('Город не выбран', '').trim();
+        }
       }
       return isValidCity;
     };
 
     const validateAllFields = () => {
-      if (nameInput) {
-        if (!validateName()) {
-          nameInput.closest('.form__item').classList.add('form__item--invalid');
-        } else {
-          nameInput.closest('.form__item').classList.remove('form__item--invalid');
-        }
-      }
-
-      if (phoneInput) {
-        if (!validatePhone()) {
-          phoneInput.closest('.form__item').classList.add('form__item--invalid');
-        } else {
-          phoneInput.closest('.form__item').classList.remove('form__item--invalid');
-        }
-      }
-
-      if (messageInput) {
-        if (!validateMessage()) {
-          messageInput.closest('.form__item').classList.add('form__item--invalid');
-        } else {
-          messageInput.closest('.form__item').classList.remove('form__item--invalid');
-        }
-      }
-
-      if (privacyCheckbox) {
-        if (!validatePrivacy()) {
-          privacyCheckbox.closest('.form__item').classList.add('form__item--invalid');
-        } else {
-          privacyCheckbox.closest('.form__item').classList.remove('form__item--invalid');
-        }
-      }
-
-      if (citySelect) {
-        if (!validateCity()) {
-          citySelect.closest('.form__item, .modal__item, .form__item-select').classList.add('form__item--invalid');
-        } else {
-          citySelect.closest('.form__item, .modal__item, .form__item-select').classList.remove('form__item--invalid');
-        }
-      }
+      validateName();
+      validatePhone();
+      validateMessage();
+      validatePrivacy();
+      validateCity();
     };
 
+    if (nameInput) {
+      nameInput.addEventListener('input', validateName);
+    }
 
     if (phoneInput) {
       initPhoneInput(phoneInput);
       phoneInput.addEventListener('input', validatePhone);
+    }
+
+    if (messageInput) {
+      messageInput.addEventListener('input', validateMessage);
+    }
+
+    if (privacyCheckbox) {
+      privacyCheckbox.addEventListener('change', validatePrivacy);
+    }
+
+    if (cityButton) {
+      cityButton.addEventListener('click', validateCity);
     }
 
     if (form) {
@@ -141,7 +133,30 @@ export const validateForm = () => {
         validateAllFields();
 
         if (form.checkValidity() && (!citySelect || validateCity())) {
-          form.submit();
+          const formData = new FormData(form);
+
+          fetch(form.action, {
+            method: 'POST',
+            body: formData
+          })
+            .then((response) => {
+              if (response.ok) {
+                showMessage('Форма успешно отправлена', 'success');
+
+                const modal = form.closest('.modal');
+                if (modal) {
+                  modal.classList.remove('modal--open');
+                  modal.classList.add('modal--close');
+                }
+
+                window.location.href = '/';
+              } else {
+                showMessage('Ошибка отправки формы', 'error');
+              }
+            })
+            .catch(() => {
+              showMessage('Ошибка при отправке формы', 'error');
+            });
         } else {
           form.reportValidity();
         }
@@ -159,3 +174,15 @@ export const validateForm = () => {
     }
   });
 };
+
+function showMessage(message, type) {
+  const messageContainer = document.createElement('div');
+  messageContainer.classList.add('message', `message--${type}`);
+  messageContainer.textContent = message;
+
+  document.body.appendChild(messageContainer);
+
+  setTimeout(() => {
+    messageContainer.remove();
+  }, 3000);
+}

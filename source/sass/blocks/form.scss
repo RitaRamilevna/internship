@@ -221,9 +221,9 @@
   }
 }
 
-textarea.form__input {
+.form__input-message {
   height: 94px;
-  padding: 14px 14px;
+  padding: 14px;
 
   resize: none;
 
@@ -377,6 +377,10 @@ textarea.form__input {
   &::after {
     background-image: url("../img/sprite/arrow-nav-dark.svg");
   }
+}
+
+.form__select-button--empty {
+  color: rgba(0, 0, 0, 0);
 }
 
 .form__select-button--selected {
@@ -542,10 +546,8 @@ textarea.form__input {
 }
 
 .form__item-privacy:hover .form__input-checkbox:checked::after,
-.form__item-privacy:focus
-  .form__input-checkbox:checked::after
-  .form__item-privacy:focus-visible
-  .form__input-checkbox:checked::after {
+.form__item-privacy:focus .form__input-checkbox:checked::after,
+.form__item-privacy:focus-visible .form__input-checkbox:checked::after {
   background-image: url("../img/sprite/check-tick-white.svg");
 }
 
@@ -554,6 +556,14 @@ textarea.form__input {
 .form__item-privacy-light:focus-visible .form__input-checkbox-light:checked {
   border-color: rgba($color-main-dark, 1);
   outline: none;
+}
+
+.form__item-privacy-light:hover .form__input-checkbox-light:checked::after,
+.form__item-privacy-light:focus .form__input-checkbox-light:checked::after,
+.form__item-privacy-light:focus-visible
+  .form__input-checkbox-light:checked::after {
+  background-image: url("../img/sprite/check-tick-black.svg");
+  opacity: 1;
 }
 
 .form__item-privacy:disabled .form__input-checkbox:checked::after,
