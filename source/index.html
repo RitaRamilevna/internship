@@ -1241,20 +1241,14 @@
                 </div>
 
                 <div class="form__item form__item-select">
-                  <div class="form__label form__label-city">Выберите город</div>
-                  <button class="form__input form__select-button" type="button" aria-haspopup="listbox" aria-expanded="false">
-                    <span class="visually-hidden">Город не выбран</span>
-                  </button>
-                  <ul class="form__select-list list-reset" role="listbox" aria-hidden="true">
-                    <li class="form__select-item form__select-item--empty form__select-item--selected" tabindex="0" data-value="empty" role="option" aria-selected="true">
-                      <span class="visually-hidden">Город не выбран</span>
-                    </li>
-                    <li class="form__select-item" tabindex="0" data-value="moscow" role="option">Москва</li>
-                    <li class="form__select-item" tabindex="0" data-value="saint-petersburg" role="option">Санкт-Петербург</li>
-                    <li class="form__select-item" tabindex="0" data-value="tbilisi" role="option">Тбилиси</li>
-                    <li class="form__select-item" tabindex="0" data-value="sterlitamak" role="option">Стерлитамак</li>
-                  </ul>
-                  <input type="hidden" name="city" value="empty">
+                  <label class="form__label form__label-city" for="city-button">Выберите город</label>
+                  <select class="form__select-list-hidden" id="city-button" name="city" tabindex="-1">
+                    <option value="empty">Город не выбран</option>
+                    <option value="moscow">Москва</option>
+                    <option value="saint-petersburg">Санкт-Петербург</option>
+                    <option value="tbilisi">Тбилиси</option>
+                    <option value="sterlitamak">Стерлитамак</option>
+                  </select>
                 </div>
 
                 <div class="form__item form__item-privacy">
@@ -1374,7 +1368,7 @@
             <h3 class="form__title form__title--light">Напишите нам</h3>
             <p class="form__intro form__intro--light">Оставьте ваши контакты, если у вас остались вопросы — мы на них ответим!</p>
 
-            <form class="form__form" action="https://echo.htmlacademy.ru" method="post">
+            <form class="modal__form" action="https://echo.htmlacademy.ru" method="post">
 
               <div class="form__item form__item-light">
                 <label class="form__label form__label-light form__label-name" for="name-modal">Имя</label>
@@ -1386,24 +1380,18 @@
                 <input class="form__input form__input-light form__input-phone" type="tel" id="phone-modal" name="phone" required>
               </div>
 
-              <div class="form__item form__item-select">
-                <div class="form__label form__label-city form__label-light">Выберите город</div>
-                <button class="form__input form__select-button form__select-button-light" type="button" aria-haspopup="listbox" aria-expanded="false">
-                  <span class="visually-hidden">Город не выбран</span>
-                </button>
-                <ul class="form__select-list form__select-list-light list-reset" role="listbox" aria-hidden="true">
-                  <li class="form__select-item form__select-item--empty form__select-item--selected" tabindex="0" data-value="empty" role="option" aria-selected="true">
-                    <span class="visually-hidden">Город не выбран</span>
-                  </li>
-                  <li class="form__select-item" tabindex="0" data-value="moscow" role="option">Москва</li>
-                  <li class="form__select-item" tabindex="0" data-value="saint-petersburg" role="option">Санкт-Петербург</li>
-                  <li class="form__select-item" tabindex="0" data-value="tbilisi" role="option">Тбилиси</li>
-                  <li class="form__select-item" tabindex="0" data-value="sterlitamak" role="option">Стерлитамак</li>
-                </ul>
-                <input type="hidden" name="city" value="empty">
+              <div class="form__item form__item-light form__item-select form__item-select-light">
+                <label class="form__label form__label-light form__label-city" for="city-modal-button">Выберите город</label>
+                <select class="form__select-list" id="city-modal-button" name="city">
+                  <option value="empty">Город не выбран</option>
+                  <option value="moscow">Москва</option>
+                  <option value="saint-petersburg">Санкт-Петербург</option>
+                  <option value="tbilisi">Тбилиси</option>
+                  <option value="sterlitamak">Стерлитамак</option>
+                </select>
               </div>
 
-              <div class="form__item form__item-privacy">
+              <div class="form__item form__item-privacy form__item-privacy-light">
                 <input class="form__input form__input-checkbox form__input-checkbox-light" type="checkbox" id="privacy-modal" name="privacy" required>
                 <label class="form__label form__label-privacy form__label-privacy-light" for="privacy-modal">Я согласен на обработку моих персональных <br>данных</label>
               </div>

@@ -4,7 +4,7 @@ export function initModal() {
   const aboutButton = document.querySelector('.about__button');
   const modal = document.querySelector('.page-body__modal');
   const closeButton = document.querySelector('.modal__close-button');
-  const modalForm = modal.querySelector('.form__form');
+  const modalForm = modal.querySelector('.modal__form');
   const body = document.querySelector('body');
   const messageContainer = document.createElement('div');
   messageContainer.className = 'form__message-container';

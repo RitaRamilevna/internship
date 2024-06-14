@@ -9,8 +9,7 @@ import { initModal } from './modules/init-modal';
 import { initCustomSelect } from './modules/init-select';
 import { validateForm } from './modules/form-validate';
 
-document.addEventListener('DOMContentLoaded', () => {
-
+window.addEventListener('DOMContentLoaded', () => {
   menuOpen();
   initialAccordion();
   initNavigationToggle();
@@ -18,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProgramsSlider();
   initNewsFeature();
   initReviewsSlider();
-  initModal();
   initCustomSelect();
   validateForm();
+  initModal();
 });

@@ -30,10 +30,14 @@
   color: $color-main-basic;
 
   @media (min-width: $tablet-width) {
+    margin-bottom: 17px;
+
     font-size: 28px;
   }
 
   @media (min-width: $desktop-width) {
+    margin-bottom: 14px;
+
     font-size: 32px;
     line-height: 112%;
   }
@@ -74,6 +78,21 @@
   line-height: 143%;
   text-align: center;
   color: $color-main-dark;
+
+  @media (min-width: $tablet-width) {
+    width: 100%;
+    margin-bottom: 33px;
+
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 31px;
+
+    font-size: 16px;
+    line-height: 162%;
+  }
 }
 
 .form__item {
@@ -94,6 +113,16 @@
   margin-bottom: 15px;
 
   gap: 8px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 23px;
+
+    gap: 15px;
+  }
+
+  @media (min-width: $desktop-width) {
+    gap: 13px;
+  }
 }
 
 .form__item-privacy {
@@ -186,6 +215,10 @@
   color: $color-main-dark;
 
   border: 1px solid rgba($color-main-dark, 0.3);
+
+  @media (min-width: $tablet-width) {
+    min-height: 50px;
+  }
 }
 
 textarea.form__input {
@@ -203,18 +236,24 @@ textarea.form__input {
   }
 }
 
-.form__item:hover .form__input {
+.form__item:hover .form__input,
+.form__item:hover .form__select-button {
   border: 1px solid rgba($color-basic-light, 1);
 }
 
-.form__item-light:hover .form__input-light {
+.form__item-light:hover .form__input-light,
+.form__item-light:hover .form__select-button-light {
   border: 1px solid rgba($color-main-dark, 1);
 }
 
 .form__item:active .form__input,
 .form__item:focus .form__input,
 .form__item:focus-visible .form__input,
-.form__item:focus-within .form__input {
+.form__item:focus-within .form__input,
+.form__item:active .form__select-button,
+.form__item:focus .form__select-button,
+.form__item:focus-visible .form__select-button,
+.form__item:focus-within .form__select-button {
   border: 1px solid rgba($color-basic-light, 1);
   outline: none;
 }
@@ -222,7 +261,11 @@ textarea.form__input {
 .form__item-light:active .form__input-light,
 .form__item-light:focus .form__input-light,
 .form__item-light:focus-visible .form__input-light,
-.form__item-light:focus-within .form__input-light {
+.form__item-light:focus-within .form__input-light,
+.form__item-light:active .form__select-button-light,
+.form__item-light:focus .form__select-button-light,
+.form__item-light:focus-visible .form__select-button-light,
+.form__item-light:focus-within .form__select-button-light {
   border: 1px solid rgba($color-main-dark, 1);
   outline: none;
 }
@@ -230,13 +273,23 @@ textarea.form__input {
 .form__item:invalid .form__input,
 .form__item--invalid .form__input,
 .form__item-light:invalid .form__input-light,
-.form__item-light--invalid .form__input-light {
+.form__item-light--invalid .form__input-light,
+.form__item:invalid .form__select-button,
+.form__item--invalid .form__select-button,
+.form__item-light:invalid .form__select-button-light,
+.form__item-light--invalid .form__select-button-light {
   background-color: rgba(255, 94, 102, 0.2);
   border: 1px solid $color-form-error;
 }
 
 .form__item:disabled .form__input,
-.form__item--disabled .form__input {
+.form__item--disabled .form__input,
+.form__item-light:disabled .form__input-light,
+.form__item-light--disabled .form__input-light,
+.form__item:disabled .form__select-button,
+.form__item--disabled .form__select-button,
+.form__item-light:disabled .form__select-button-light,
+.form__item-light--disabled .form__select-button-light {
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba($color-basic-light, 0.4);
 }
@@ -251,10 +304,24 @@ textarea.form__input {
   }
 }
 
-.form__select-button {
+.form__item-select.form__item-select-light {
+  @media (min-width: $desktop-width) {
+    margin-bottom: 20px;
+
+    gap: 15px;
+  }
+}
+
+.form__select-wrapper {
+  position: relative;
+}
+
+.form__select-button,
+.form__select-button-light {
   position: relative;
 
   display: flex;
+  justify-content: space-between;
   align-items: center;
   width: 96.2%;
   min-height: 52px;
@@ -271,12 +338,11 @@ textarea.form__input {
     width: 100%;
   }
 
-  &:after {
+  &::after {
     content: "";
     position: absolute;
     top: 50%;
     right: 20px;
-    bottom: 50%;
 
     width: 16px;
     height: 16px;
@@ -294,27 +360,39 @@ textarea.form__input {
 
 .form__select-button-light {
   width: 100%;
+  min-height: 44px;
+
+  color: $color-main-dark;
 
   border: 1px solid rgba($color-main-dark, 0.3);
 
-  &:after {
+  @media (min-width: $tablet-width) {
+    min-height: 50px;
+  }
+
+  &::after {
     background-image: url("../img/sprite/arrow-nav-dark.svg");
   }
 }
 
 .form__select-button--selected {
-  &:after {
+  &::after {
     transform: translateY(-50%) rotate(180deg);
   }
 }
 
-.form__select-list {
+.form__select-list,
+.form__select-list-light {
+  display: none;
+}
+
+.form__select-list-hidden {
   display: none;
 }
 
 .form__select-list--selected {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 4px);
   right: 0;
   left: 0;
   z-index: 99;
@@ -322,7 +400,6 @@ textarea.form__input {
   display: block;
   width: 96.2%;
   max-height: 200px;
-  margin-top: 4px;
   padding: 0;
   overflow: auto;
 
@@ -336,7 +413,7 @@ textarea.form__input {
   }
 }
 
-.form__select-list--selected.form__select-list.form__select-list-light {
+.form__select-list--selected.form__select-list-light {
   width: 100%;
 
   border: 1px solid $color-main-dark;
@@ -371,6 +448,14 @@ textarea.form__input {
     color: $color-main-light;
   }
 }
+
+/* .form__item:invalid .form__input,
+.form__item--invalid .form__input,
+.form__item-light:invalid .form__input-light,
+.form__item-light--invalid .form__input-light {
+  background-color: rgba(255, 94, 102, 0.2);
+  border: 1px solid $color-form-error;
+} */
 
 .form__input-checkbox {
   position: relative;
@@ -409,6 +494,14 @@ textarea.form__input {
 
   background-image: url("../img/sprite/check-tick.svg");
   transform: translate(-50%, -50%);
+}
+
+.form__item-privacy-light {
+  margin-bottom: 25px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 27px;
+  }
 }
 
 .form__label-privacy {
@@ -478,5 +571,35 @@ textarea.form__input {
 
   @media (min-width: $desktop-width) {
     width: 100%;
+  }
+}
+
+.form__button.form__button-light {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 42px;
+  padding: 4px 3px 2px 20px;
+
+  gap: 20px;
+  grid-template-columns: 1fr 34px;
+
+  @media (min-width: $tablet-width) {
+    width: 55%;
+    min-height: 56px;
+    margin: 0 auto;
+    padding: 4px 4px 4px 31px;
+
+    text-align: center;
+
+    gap: 30px;
+    grid-template-columns: 1fr 46px;
+    justify-self: center;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-height: 58px;
+    padding: 5px 5px 5px 30px;
   }
 }

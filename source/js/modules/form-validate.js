@@ -1,24 +1,20 @@
 import { initPhoneInput } from './init-phone-input';
 
-export const validateForm = async () => {
-  const forms = document.querySelectorAll('.form__form');
+export const validateForm = () => {
+  const forms = document.querySelectorAll('.form__form, .modal__form');
 
   forms.forEach((form) => {
     const nameInput = form.querySelector('.form__input-name');
     const phoneInput = form.querySelector('.form__input-phone');
     const messageInput = form.querySelector('.form__input-message');
     const privacyCheckbox = form.querySelector('.form__input-checkbox');
-    const citySelect = form.querySelector('.form__select-list');
-    const cityInput = form.querySelector('input[name="city"]');
-
-    if (phoneInput) {
-      initPhoneInput(phoneInput.closest('.form__item'));
-    }
+    const citySelect = form.querySelector('.form__select-wrapper');
+    const selectElement = form.querySelector('select[name="city"]');
+    const submitButton = form.querySelector('button[type="submit"]');
 
     const validateName = () => {
       if (nameInput) {
-        const nameRegex = /^[а-яА-ЯёЁa-zA-Z\s-]+$/;
-        const isValidName = nameRegex.test(nameInput.value.trim());
+        const isValidName = nameInput.value.trim() !== '';
         const nameField = nameInput.closest('.form__item');
 
         if (isValidName) {
@@ -26,23 +22,23 @@ export const validateForm = async () => {
           nameInput.setCustomValidity('');
         } else {
           nameField.classList.add('form__item--invalid');
-          nameInput.setCustomValidity('Пожалуйста, введите корректное имя (только буквы, дефисы и пробелы).');
+          nameInput.setCustomValidity('Пожалуйста, введите ваше имя.');
         }
       }
     };
 
     const validatePhone = () => {
       if (phoneInput) {
-        const phoneRegex = /^\+7\s\(\d{3}\)\s\d{3}\s\d{2}\s\d{2}$/;
-        const isValidPhone = phoneRegex.test(phoneInput.value);
         const phoneField = phoneInput.closest('.form__item');
+        const inputNumbersValue = phoneInput.value.replace(/\D/g, '');
 
-        if (isValidPhone) {
+        if (inputNumbersValue.length === 11) {
           phoneField.classList.remove('form__item--invalid');
           phoneInput.setCustomValidity('');
         } else {
           phoneField.classList.add('form__item--invalid');
           phoneInput.setCustomValidity('Пожалуйста, введите корректный номер телефона.');
+          phoneInput.title = 'Пожалуйста, введите корректный номер телефона.';
         }
       }
     };
@@ -76,75 +72,93 @@ export const validateForm = async () => {
     };
 
     const validateCity = () => {
-      if (cityInput) {
-        const cityField = cityInput.closest('.form__item-select');
-        if (cityInput.value === 'empty') {
-          cityField.classList.add('form__item--invalid');
-          cityInput.setCustomValidity('Пожалуйста, выберите город.');
-        } else {
-          cityField.classList.remove('form__item--invalid');
-          cityInput.setCustomValidity('');
-        }
+      const cityButton = form.querySelector('.form__select-button');
+      const isValidCity = cityButton && cityButton.textContent.trim() !== 'Город не выбран';
+
+      if (!isValidCity) {
+        selectElement.setCustomValidity('');
+        citySelect.classList.add('form__select-wrapper--invalid');
+        citySelect.closest('.form__item, .modal__item, .form__item-select').classList.add('form__item--invalid');
+      } else {
+        selectElement.setCustomValidity('');
+        citySelect.classList.remove('form__select-wrapper--invalid');
+        citySelect.closest('.form__item, .modal__item, .form__item-select').classList.remove('form__item--invalid');
       }
+      return isValidCity;
     };
 
-    const handleInvalid = (event) => {
-      event.preventDefault();
-      const field = event.target.closest('.form__item');
-      if (field) {
-        field.classList.add('form__item--invalid');
-      }
-    };
+    const validateAllFields = () => {
+      const nameField = nameInput.closest('.form__item');
+      const phoneField = phoneInput.closest('.form__item');
+      const messageField = messageInput.closest('.form__item');
+      const privacyField = privacyCheckbox.closest('.form__item');
+      const cityField = citySelect.closest('.form__item, .modal__item, .form__item-select');
 
-    const attachValidationEvents = () => {
-      if (nameInput) {
-        nameInput.addEventListener('input', validateName);
-        nameInput.addEventListener('invalid', handleInvalid);
+      if (!validateName()) {
+        nameField.classList.add('form__item--invalid');
+      } else {
+        nameField.classList.remove('form__item--invalid');
       }
-      if (phoneInput) {
-        phoneInput.addEventListener('blur', validatePhone);
-        phoneInput.addEventListener('invalid', handleInvalid);
-      }
-      if (messageInput) {
-        messageInput.addEventListener('input', validateMessage);
-        messageInput.addEventListener('invalid', handleInvalid);
-      }
-      if (privacyCheckbox) {
-        privacyCheckbox.addEventListener('change', validatePrivacy);
-        privacyCheckbox.addEventListener('invalid', handleInvalid);
-      }
-      if (citySelect) {
-        citySelect.addEventListener('click', (event) => {
-          const selectedCity = event.target.dataset.value;
-          if (selectedCity) {
-            cityInput.value = selectedCity;
-            validateCity();
-          } else {
-            handleInvalid(event);
-          }
-        });
-      }
-    };
 
-    form.addEventListener('submit', (event) => {
+      if (!validatePhone()) {
+        phoneField.classList.add('form__item--invalid');
+
+      } else {
+        phoneField.classList.remove('form__item--invalid');
+      }
+
+      if (!validateMessage()) {
+        messageField.classList.add('form__item--invalid');
+      } else {
+        messageField.classList.remove('form__item--invalid');
+      }
+
+      if (!validatePrivacy()) {
+        privacyField.classList.add('form__item--invalid');
+      } else {
+        privacyField.classList.remove('form__item--invalid');
+      }
+
+      if (!validateCity()) {
+        cityField.classList.add('form__item--invalid');
+      } else {
+        cityField.classList.remove('form__item--invalid');
+      }
+
       validateName();
       validatePhone();
       validateMessage();
       validatePrivacy();
       validateCity();
+    };
 
-      if (form.checkValidity() === false) {
+
+    if (phoneInput) {
+      initPhoneInput(phoneInput);
+      phoneInput.addEventListener('input', validatePhone);
+    }
+
+    if (form) {
+      form.addEventListener('submit', (event) => {
         event.preventDefault();
-        const invalidFields = form.querySelectorAll(':invalid');
-        invalidFields.forEach((field) => {
-          const formItem = field.closest('.form__item');
-          if (formItem) {
-            formItem.classList.add('form__item--invalid');
-          }
-        });
-      }
-    });
+        validateAllFields();
 
-    attachValidationEvents();
+        if (form.checkValidity() && validateCity()) {
+          form.submit();
+        } else {
+          form.reportValidity();
+        }
+      });
+    }
+
+    if (submitButton) {
+      submitButton.addEventListener('click', (event) => {
+        validateAllFields();
+        if (!form.checkValidity() || !validateCity()) {
+          event.preventDefault();
+          form.reportValidity();
+        }
+      });
+    }
   });
 };
