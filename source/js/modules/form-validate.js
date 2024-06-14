@@ -1,7 +1,7 @@
 import { initPhoneInput } from './init-phone-input';
 
 export const validateForm = () => {
-  const forms = document.querySelectorAll('.form__form, .modal__form');
+  const forms = document.querySelectorAll('.form__form');
 
   forms.forEach((form) => {
     const nameInput = form.querySelector('.form__input-name');
@@ -10,7 +10,7 @@ export const validateForm = () => {
     const privacyCheckbox = form.querySelector('.form__input-checkbox');
     const citySelect = form.querySelector('.form__select-wrapper');
     const submitButton = form.querySelector('button[type="submit"]');
-    const cityButton = form.querySelector('.form__select-button');
+    const cityButton = form.querySelector('.form__select-button, .form__select-button-light');
 
     const validateName = () => {
       if (nameInput) {
@@ -88,48 +88,45 @@ export const validateForm = () => {
     };
 
     const validateAllFields = () => {
-      const nameField = nameInput.closest('.form__item');
-      const phoneField = phoneInput.closest('.form__item');
-      const messageField = messageInput.closest('.form__item');
-      const privacyField = privacyCheckbox.closest('.form__item');
-      const cityField = citySelect.closest('.form__item, .modal__item, .form__item-select');
-
-      if (!validateName()) {
-        nameField.classList.add('form__item--invalid');
-      } else {
-        nameField.classList.remove('form__item--invalid');
+      if (nameInput) {
+        if (!validateName()) {
+          nameInput.closest('.form__item').classList.add('form__item--invalid');
+        } else {
+          nameInput.closest('.form__item').classList.remove('form__item--invalid');
+        }
       }
 
-      if (!validatePhone()) {
-        phoneField.classList.add('form__item--invalid');
-
-      } else {
-        phoneField.classList.remove('form__item--invalid');
+      if (phoneInput) {
+        if (!validatePhone()) {
+          phoneInput.closest('.form__item').classList.add('form__item--invalid');
+        } else {
+          phoneInput.closest('.form__item').classList.remove('form__item--invalid');
+        }
       }
 
-      if (!validateMessage()) {
-        messageField.classList.add('form__item--invalid');
-      } else {
-        messageField.classList.remove('form__item--invalid');
+      if (messageInput) {
+        if (!validateMessage()) {
+          messageInput.closest('.form__item').classList.add('form__item--invalid');
+        } else {
+          messageInput.closest('.form__item').classList.remove('form__item--invalid');
+        }
       }
 
-      if (!validatePrivacy()) {
-        privacyField.classList.add('form__item--invalid');
-      } else {
-        privacyField.classList.remove('form__item--invalid');
+      if (privacyCheckbox) {
+        if (!validatePrivacy()) {
+          privacyCheckbox.closest('.form__item').classList.add('form__item--invalid');
+        } else {
+          privacyCheckbox.closest('.form__item').classList.remove('form__item--invalid');
+        }
       }
 
-      if (!validateCity()) {
-        cityField.classList.add('form__item--invalid');
-      } else {
-        cityField.classList.remove('form__item--invalid');
+      if (citySelect) {
+        if (!validateCity()) {
+          citySelect.closest('.form__item, .modal__item, .form__item-select').classList.add('form__item--invalid');
+        } else {
+          citySelect.closest('.form__item, .modal__item, .form__item-select').classList.remove('form__item--invalid');
+        }
       }
-
-      validateName();
-      validatePhone();
-      validateMessage();
-      validatePrivacy();
-      validateCity();
     };
 
 
@@ -143,7 +140,7 @@ export const validateForm = () => {
         event.preventDefault();
         validateAllFields();
 
-        if (form.checkValidity() && validateCity()) {
+        if (form.checkValidity() && (!citySelect || validateCity())) {
           form.submit();
         } else {
           form.reportValidity();

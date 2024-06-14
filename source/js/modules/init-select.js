@@ -1,9 +1,9 @@
 export function initCustomSelect() {
-  const forms = document.querySelectorAll('.form__form, .modal__form');
+  const forms = document.querySelectorAll('.form__form');
 
   forms.forEach((form) => {
     const selectElements = form.querySelectorAll('select[name="city"]');
-    const isModalForm = form.classList.contains('modal__form');
+    const isModalForm = form.classList.contains('form__form-modal');
 
     selectElements.forEach((selectElement) => {
       if (selectElement) {
@@ -12,7 +12,7 @@ export function initCustomSelect() {
           return;
         }
 
-        const selectLabel = selectElement.closest('.form__item, .modal__item').querySelector('.form__label-city, .modal__label-city');
+        const selectLabel = selectElement.closest('.form__item').querySelector('.form__label-city');
         const selectItems = selectElement.querySelectorAll('option');
         const selectWrapper = document.createElement('div');
         const selectButton = document.createElement('button');
@@ -77,7 +77,7 @@ export function initCustomSelect() {
             }
             selectButton.setAttribute('aria-expanded', 'false');
 
-            const cityField = selectButton.closest('.form__item, .modal__item');
+            const cityField = selectButton.closest('.form__item');
             cityField.classList.remove('form__item--invalid');
           });
 

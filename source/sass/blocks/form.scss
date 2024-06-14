@@ -262,36 +262,40 @@ textarea.form__input {
 .form__item-light:focus .form__input-light,
 .form__item-light:focus-visible .form__input-light,
 .form__item-light:focus-within .form__input-light,
-.form__item-light:active .form__select-button-light,
-.form__item-light:focus .form__select-button-light,
-.form__item-light:focus-visible .form__select-button-light,
-.form__item-light:focus-within .form__select-button-light {
+.form__item:active .form__select-button-light,
+.form__item:focus .form__select-button-light,
+.form__item:focus-visible .form__select-button-light,
+.form__item:focus-within .form__select-button-light {
   border: 1px solid rgba($color-main-dark, 1);
   outline: none;
 }
 
 .form__item:invalid .form__input,
 .form__item--invalid .form__input,
-.form__item-light:invalid .form__input-light,
-.form__item-light--invalid .form__input-light,
+.form__item:invalid .form__input-light,
+.form__item--invalid .form__input-light,
 .form__item:invalid .form__select-button,
 .form__item--invalid .form__select-button,
-.form__item-light:invalid .form__select-button-light,
-.form__item-light--invalid .form__select-button-light {
+.form__item:invalid .form__select-button-light,
+.form__item--invalid .form__select-button-light {
   background-color: rgba(255, 94, 102, 0.2);
   border: 1px solid $color-form-error;
 }
 
 .form__item:disabled .form__input,
 .form__item--disabled .form__input,
-.form__item-light:disabled .form__input-light,
-.form__item-light--disabled .form__input-light,
 .form__item:disabled .form__select-button,
-.form__item--disabled .form__select-button,
-.form__item-light:disabled .form__select-button-light,
-.form__item-light--disabled .form__select-button-light {
+.form__item--disabled .form__select-button {
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba($color-basic-light, 0.4);
+}
+
+.form__item:disabled .form__input-light,
+.form__item--disabled .form__input-light,
+.form__item:disabled .form__select-button-light,
+.form__item--disabled .form__select-button-light {
+  background: rgba(169, 175, 183, 0.2);
+  border: 1px solid rgba(169, 175, 183, 0.5);
 }
 
 .form__item-select {
@@ -449,53 +453,6 @@ textarea.form__input {
   }
 }
 
-/* .form__item:invalid .form__input,
-.form__item--invalid .form__input,
-.form__item-light:invalid .form__input-light,
-.form__item-light--invalid .form__input-light {
-  background-color: rgba(255, 94, 102, 0.2);
-  border: 1px solid $color-form-error;
-} */
-
-.form__input-checkbox {
-  position: relative;
-
-  flex-shrink: 0;
-  align-self: center;
-  width: 20px;
-  height: 20px;
-  min-height: 0;
-  padding: 0;
-
-  background-color: $color-basic-light;
-  border-color: $color-basic-light;
-  border-radius: 4px;
-  outline: none;
-  cursor: pointer;
-}
-
-.form__input-checkbox-light {
-  background-color: $color-main-basic;
-  border-color: $color-main-basic;
-}
-
-.form__input-checkbox:checked {
-  background-color: $color-basic-light;
-}
-
-.form__input-checkbox:checked::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
-  width: 10px;
-  height: 10px;
-
-  background-image: url("../img/sprite/check-tick.svg");
-  transform: translate(-50%, -50%);
-}
-
 .form__item-privacy-light {
   margin-bottom: 25px;
 
@@ -529,6 +486,88 @@ textarea.form__input {
   }
 }
 
+.form__input-checkbox {
+  position: relative;
+
+  flex-shrink: 0;
+  align-self: center;
+  width: 20px;
+  height: 20px;
+  min-height: 0;
+  padding: 0;
+
+  background-color: $color-basic-light;
+  border-color: $color-basic-light;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+.form__input-checkbox-light {
+  background-color: $color-main-basic;
+  border-color: $color-main-basic;
+}
+
+.form__input-checkbox:checked {
+  background-color: $color-basic-light;
+}
+
+.form__input-checkbox.form__input-checkbox-light:checked {
+  border-color: rgba($color-main-dark, 0.3);
+}
+
+.form__input-checkbox:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 10px;
+  height: 10px;
+
+  background-image: url("../img/sprite/check-tick.svg");
+  transform: translate(-50%, -50%);
+}
+
+.form__input-checkbox.form__input-checkbox-light:checked::after {
+  background-image: url("../img/sprite/check-tick-black.svg");
+  opacity: 0.8;
+}
+
+.form__item-privacy:hover .form__input-checkbox:checked,
+.form__item-privacy:focus .form__input-checkbox:checked,
+.form__item-privacy:focus-visible .form__input-checkbox:checked {
+  background-color: transparent;
+  outline: none;
+}
+
+.form__item-privacy:hover .form__input-checkbox:checked::after,
+.form__item-privacy:focus
+  .form__input-checkbox:checked::after
+  .form__item-privacy:focus-visible
+  .form__input-checkbox:checked::after {
+  background-image: url("../img/sprite/check-tick-white.svg");
+}
+
+.form__item-privacy-light:hover .form__input-checkbox-light:checked,
+.form__item-privacy-light:focus .form__input-checkbox-light:checked,
+.form__item-privacy-light:focus-visible .form__input-checkbox-light:checked {
+  border-color: rgba($color-main-dark, 1);
+  outline: none;
+}
+
+.form__item-privacy:disabled .form__input-checkbox:checked::after,
+.form__item-privacy--disabled .form__input-checkbox:checked::after {
+  background-image: url("../img/sprite/check-tick-white.svg");
+  opacity: 1;
+}
+
+.form__item-privacy:disabled .form__input-checkbox:checked,
+.form__item-privacy--disabled .form__input-checkbox:checked {
+  background-color: $color-disabled;
+  border-color: $color-disabled;
+}
+
 .form__item:disabled .form__item-privacy .form__input-checkbox,
 .form__item--disabled .form__item-privacy .form__input-checkbox {
   background: rgba(255, 255, 255, 0.6);
@@ -539,26 +578,6 @@ textarea.form__input {
 .form__item--invalid .form__item-privacy .form__input-checkbox {
   background-color: rgba($color-form-error, 0.2);
   border: 1px solid rgba($color-form-error, 0.7);
-}
-
-.form__item-privacy:hover .form__input-checkbox:checked {
-  background-color: transparent;
-}
-
-.form__item-privacy:hover .form__input-checkbox:checked::after {
-  background-image: url("../img/sprite/check-tick-white.svg");
-}
-
-.form__item-privacy:disabled .form__input-checkbox:checked,
-.form__item-privacy--disabled .form__input-checkbox:checked {
-  background-color: $color-disabled;
-  border-color: $color-disabled;
-}
-
-.form__item-privacy:disabled .form__input-checkbox:checked::after,
-.form__item-privacy--disabled .form__input-checkbox:checked::after {
-  background-image: url("../img/sprite/check-tick-white.svg");
-  opacity: 0.7;
 }
 
 .form__button {
