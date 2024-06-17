@@ -10,14 +10,16 @@ export function initHeroSlider() {
   const heroSwiper = new Swiper('.hero__swiper', {
     modules: [Autoplay, Pagination, EffectFade],
     loop: true,
+    grabCursor: true,
     autoHeight: true,
     speed: 1500,
     effect: 'fade',
-    /* autoplay: {
+    autoplay: {
       delay: 3000,
-    }, */
+    },
     breakpoints: {
       1440: {
+        grabCursor: false,
         allowTouchMove: false,
       },
       768: {

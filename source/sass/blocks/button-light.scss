@@ -45,6 +45,7 @@
 
 .button-light__icon-light {
   display: flex;
+  flex-shrink: 0;
   justify-content: center;
   align-items: center;
   width: 34px;

@@ -17,6 +17,7 @@ function menuOpen() {
         item.classList.toggle('nav__item--opened');
       });
     });
+
   });
 
   document.addEventListener('click', (event) => {

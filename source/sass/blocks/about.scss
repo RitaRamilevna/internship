@@ -126,11 +126,12 @@
 
   @media (min-width: $tablet-width) {
     max-width: 279px;
-    padding: 4px 4px 4px 30px;
+    padding: 4px 3px 4px 30px;
+
+    gap: 31px;
   }
 
   @media (min-width: $desktop-width) {
     min-height: 56px;
-    padding: 4px 4px 4px 31px;
   }
 }

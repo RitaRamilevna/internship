@@ -1,6 +1,5 @@
 import Swiper from 'swiper';
 import { Navigation, Scrollbar } from 'swiper/modules';
-// import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 
@@ -24,11 +23,31 @@ export function initProgramsSlider() {
       draggable: true,
       allowTouchMove: true,
       el: '.programs__scrollbar',
+      dragSize: 'auto',
+    },
 
+    on: {
+      init: function () {
+        const scrollbar = this.scrollbar;
+        const slidesCount = this.slides.length;
+        const minScrollbarWidth = this.params.minScrollbarWidth || 0;
+        const scrollbarSize = Math.max(this.width / slidesCount, minScrollbarWidth);
+        scrollbar.dragSize = scrollbarSize;
+        scrollbar.updateSize();
+      },
+      slideChange: function () {
+        const scrollbar = this.scrollbar;
+        const progress = this.progress;
+        scrollbar.updateSize();
+        scrollbar.setTranslate(progress * (this.width - scrollbar.dragSize));
+
+        if (this.isEnd) {
+          scrollbar.setTranslate(this.width - scrollbar.dragSize);
+        }
+      },
     },
 
     breakpoints: {
-      // when window width is >= 320px
       320: {
         slidesPerView: 1,
         spaceBetween: 15,
@@ -38,27 +57,22 @@ export function initProgramsSlider() {
           el: '',
           enabled: false,
         },
+        minScrollbarWidth: 0,
       },
-      // when window width is >= 768px
       768: {
         slidesPerView: 2,
         spaceBetween: 30,
-        scrollbar: {
-          dragSize: 324,
-        },
+        minScrollbarWidth: 326,
       },
-      // when window width is >= 1440px
       1440: {
+        grabCursor: false,
         slidesPerView: 3,
         spaceBetween: 32,
         allowTouchMove: false,
-        scrollbar: {
-          dragSize: 392,
-        },
+        minScrollbarWidth: 394,
       },
     },
   });
 
   return programsSlider;
-
 }

@@ -144,11 +144,8 @@
   justify-content: center;
   align-items: flex-end;
   box-sizing: border-box;
-  max-width: 100%;
   min-height: 40.6%;
   max-height: 40.6%;
-  padding: 20px 27px 0 0;
-  overflow-y: auto;
 
   border-radius: 12px;
 
@@ -156,7 +153,6 @@
     max-width: 324px;
     min-height: 48%;
     max-height: 48%;
-    padding-right: 84px;
   }
 
   @media (min-width: $desktop-width) {
@@ -187,6 +183,7 @@
   flex-direction: column;
   justify-content: flex-end;
   width: 100%;
+  max-width: 100%;
   height: 100%;
 }
 
@@ -220,9 +217,23 @@
 .news__wrapper {
   display: flex;
   flex-direction: column;
+  max-width: 279px;
   padding-top: 16px;
+  padding-right: 16px;
+  overflow: hidden;
+  overflow-y: auto;
 
   justify-self: end;
+
+  @media (min-width: $tablet-width) {
+    max-width: 256px;
+  }
+}
+
+.news__item--wide .news__wrapper {
+  @media (min-width: $desktop-width) {
+    max-width: 484px;
+  }
 }
 
 .news__time {
@@ -248,7 +259,7 @@
   }
 
   @media (min-width: $desktop-width) {
-    width: 38%;
+    width: 32%;
   }
 
   &::before,
@@ -262,6 +273,8 @@
     height: 16px;
 
     background-color: inherit;
+
+    -webkit--webkit-mask-position: center center;
     mask-image: url("../img/sprite/angle-rotation.svg");
     mask-position: center center;
     mask-repeat: no-repeat;
@@ -281,7 +294,7 @@
 
 .news__item.news__item--wide .news__time {
   @media (min-width: $desktop-width) {
-    width: 15%;
+    width: 17%;
   }
 }
 
@@ -310,7 +323,7 @@
   }
 
   @media (min-width: $desktop-width) {
-    width: 94%;
+    width: 79%;
 
     font-size: 24px;
     line-height: 108%;
@@ -328,6 +341,7 @@
     height: 16px;
 
     background-color: inherit;
+
     mask-image: url("../img/sprite/angle-rotation.svg");
     mask-position: center center;
     mask-repeat: no-repeat;
@@ -337,7 +351,7 @@
 
 .news__item.news__item--wide .news__subtitle {
   @media (min-width: $desktop-width) {
-    width: 82%;
+    width: 91%;
     padding: 18px 18px 6px 0;
   }
 }
@@ -374,18 +388,19 @@
     }
   }
 
-  &::after {
+  &::before {
     content: "";
     position: absolute;
     right: -16px;
     bottom: 0;
-    z-index: 10;
+    z-index: 50;
 
     box-sizing: border-box;
     width: 16px;
     height: 16px;
 
     background-color: inherit;
+
     mask-image: url("../img/sprite/angle-rotation.svg");
     mask-position: center center;
     mask-repeat: no-repeat;
@@ -463,6 +478,7 @@
   background-color: transparent;
   border: none;
   opacity: 1;
+
   transition: all 0.3s ease-in-out;
 
   @media (min-width: $tablet-width) {
@@ -493,7 +509,9 @@
   }
 }
 
-.news__slider-navigation .news__pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+.news__slider-navigation
+  .news__pagination
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
   color: $color-basic-light;
 
   background-color: $color-main-basic;

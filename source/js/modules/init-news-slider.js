@@ -136,6 +136,66 @@ function initTabs() {
     setTallSlideClass();
   }
 
+  function initSubMenuLinks() {
+    const subMenuLinks = document.querySelectorAll('.nav__sub-link');
+
+    subMenuLinks.forEach((link) => {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          // Закрытие меню навигации после клика по ссылке подменю
+          const nav = document.querySelector('.nav');
+          const body = document.querySelector('body');
+          const navTogglerIcon = nav.querySelector('.nav__toggle-icon');
+
+          nav.classList.remove('nav--opened');
+          nav.classList.add('nav--closed');
+          navTogglerIcon.classList.remove('nav--opened');
+          navTogglerIcon.classList.add('nav--closed');
+          body.classList.remove('page-body--overlay');
+
+          // Удаление класса nav__item--opened и добавление класса nav__item--closed
+          const parentItem = link.closest('.nav__item');
+          parentItem.classList.remove('nav__item--opened');
+          parentItem.classList.add('nav__item--closed');
+          const subList = parentItem.querySelector('.nav__sub-list');
+          if (subList) {
+            subList.style.maxHeight = '0';
+          }
+
+          // Добавление классов активности для ссылки подменю и родительского элемента
+          subMenuLinks.forEach((subLink) => subLink.classList.remove('nav__sub-link--current'));
+          link.classList.add('nav__sub-link--current');
+          const navItems = document.querySelectorAll('.nav__item');
+          navItems.forEach((item) => item.classList.remove('nav__item--current'));
+          parentItem.classList.add('nav__item--current');
+
+          // Плавный переход к целевому элементу
+          setTimeout(() => {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+          }, 300);
+
+          // Фильтрация табов слайдера, если ссылка ведет к секции новостей
+          if (targetId === '#news') {
+            const filter = this.dataset.filter;
+            const sliderFilters = document.querySelectorAll('.news__tab-item');
+            const targetFilter = Array.from(sliderFilters).find((item) => item.dataset.filter === filter);
+
+            if (targetFilter) {
+              sliderFilters.forEach((item) => item.classList.remove('news__tab-item--active'));
+              targetFilter.classList.add('news__tab-item--active');
+              showTab(filter);
+            }
+          }
+        }
+      });
+    });
+  }
+
   tabButtons.forEach((button) => {
     button.addEventListener('click', () => {
       tabButtons.forEach((btn) => btn.classList.remove('news__tab-item--active'));
@@ -152,6 +212,7 @@ function initTabs() {
   showTab('all');
 
   window.addEventListener('resize', setTallSlideClass);
+  initSubMenuLinks();
 }
 
 export function initNewsFeature() {

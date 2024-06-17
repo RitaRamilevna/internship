@@ -1,6 +1,6 @@
 .nav {
   position: absolute;
-  top: 20px;
+  top: 19px;
   right: 15px;
   left: 15px;
   z-index: 10;
@@ -67,6 +67,8 @@
   border: 1px solid $color-main-basic;
   border-radius: 30px;
 
+  transition: width 0.3s ease;
+
   gap: 20px;
 }
 
@@ -81,11 +83,14 @@
 .nav__toggle-icon {
   position: relative;
 
+  flex-shrink: 0;
   width: 46px;
   height: 46px;
 
   background-color: $color-main-basic;
   border-radius: 44px;
+
+  transition: background-color 0.3s ease;
 }
 
 .nav--opened .nav__toggle-icon {
@@ -102,38 +107,133 @@
   width: 20px;
   height: 20px;
 
-  background-repeat: no-repeat;
-  background-position: center center;
   transform: translate(-50%, -50%);
+
+  transition: all 0.3s ease;
+
+  mask-position: center center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
 }
 
 .nav--closed .nav__toggle-icon::before {
-  background-image: url("../img/sprite/nav-closed.svg");
+  background-color: $color-basic-light;
+
+  mask-image: url("../img/sprite/nav-closed.svg");
 }
 
 .nav--opened .nav__toggle-icon::before {
-  background-image: url("../img/sprite/nav-opened.svg");
+  background-color: $color-main-basic;
+
+  mask-image: url("../img/sprite/nav-opened.svg");
+}
+
+.nav--closed .nav__toggle:hover {
+  color: $color-basic-light;
+
+  background-color: $color-main-basic;
+  border: 1px solid $color-main-basic;
+}
+
+.nav--closed .nav__toggle:hover .nav__toggle-icon {
+  background-color: $color-basic-light;
+}
+
+.nav--closed .nav__toggle:hover .nav__toggle-icon::before {
+  background-color: $color-main-basic;
+}
+
+.nav--closed .nav__toggle:active,
+.nav--closed .nav__toggle:focus,
+.nav--closed .nav__toggle:focus-visible {
+  color: rgba($color-basic-light, 0.7);
+
+  background-color: $color-main-basic;
+  border: 1px solid $color-main-basic;
+  outline: none;
+}
+
+.nav--closed .nav__toggle:active .nav__toggle-icon,
+.nav--closed .nav__toggle:focus .nav__toggle-icon,
+.nav--closed .nav__toggle:focus-visible .nav__toggle-icon {
+  background-color: $color-basic-light;
+}
+
+.nav--closed .nav__toggle:active .nav__toggle-icon::before,
+.nav--closed .nav__toggle:focus .nav__toggle-icon::before,
+.nav--closed .nav__toggle:focus-visible .nav__toggle-icon::before {
+  background-color: $color-main-basic;
+  opacity: 0.7;
+}
+
+.nav--opened .nav__toggle:hover {
+  color: $color-main-basic;
+
+  background-color: $color-basic-light;
+  border: 1px solid $color-basic-light;
+}
+
+.nav--opened .nav__toggle:hover .nav__toggle-icon {
+  background-color: $color-main-basic;
+}
+
+.nav--opened .nav__toggle:hover .nav__toggle-icon::before {
+  background-color: $color-basic-light;
+}
+
+.nav--opened .nav__toggle:active,
+.nav--opened .nav__toggle:focus,
+.nav--opened .nav__toggle:focus-visible {
+  color: rgba($color-main-basic, 0.7);
+
+  background-color: $color-basic-light;
+  border: 1px solid $color-basic-light;
+  outline: none;
+}
+
+.nav--opened .nav__toggle:active .nav__toggle-icon,
+.nav--opened .nav__toggle:focus .nav__toggle-icon,
+.nav--opened .nav__toggle:focus-visible .nav__toggle-icon {
+  background-color: $color-main-basic;
+}
+
+.nav--opened .nav__toggle:active .nav__toggle-icon::before,
+.nav--opened .nav__toggle:focus .nav__toggle-icon::before,
+.nav--opened .nav__toggle:focus-visible .nav__toggle-icon::before {
+  background-color: $color-basic-light;
+  opacity: 0.7;
 }
 
 .nav__list {
-  display: none;
-}
-
-.nav--opened .nav__list {
   position: absolute;
   top: 106%;
   right: 0;
-  z-index: 10;
 
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   width: 290px;
-  padding: 21px 10px 19px;
+  max-height: 0;
+  overflow: hidden;
+
+  transform: translateY(100%);
+  opacity: 0;
+
+  transition: all 0.3s ease;
+}
+
+.nav--opened .nav__list {
+  z-index: 10;
+
+  max-height: calc(100vh - 120px);
+  padding: 19px 10px;
+  overflow-y: auto;
 
   background-color: $color-main-basic;
   border-radius: 16px;
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .nav__item {

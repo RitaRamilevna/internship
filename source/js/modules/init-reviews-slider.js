@@ -32,7 +32,6 @@ export function initReviewsSlider() {
       320: {
         slidesPerView: 1,
         spaceBetween: 15,
-        autoHeight: true,
         scrollbar: {
           hide: true,
           el: '',

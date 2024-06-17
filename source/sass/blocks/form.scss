@@ -197,7 +197,7 @@
 .form__input {
   width: 100%;
   min-height: 50px;
-  padding: 16px 25px;
+  padding: 14px 25px;
 
   color: $color-basic-light;
 
@@ -433,6 +433,8 @@
 
   cursor: pointer;
 
+  transition: color 0.3s ease, background-color 0.3s ease;
+
   &:hover {
     color: $color-main-basic;
   }
@@ -505,19 +507,27 @@
   border-radius: 4px;
   outline: none;
   cursor: pointer;
+
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .form__input-checkbox-light {
   background-color: $color-main-basic;
   border-color: $color-main-basic;
+
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .form__input-checkbox:checked {
   background-color: $color-basic-light;
+
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .form__input-checkbox.form__input-checkbox-light:checked {
   border-color: rgba($color-main-dark, 0.3);
+
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .form__input-checkbox:checked::after {
@@ -531,6 +541,8 @@
 
   background-image: url("../img/sprite/check-tick.svg");
   transform: translate(-50%, -50%);
+
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .form__input-checkbox.form__input-checkbox-light:checked::after {

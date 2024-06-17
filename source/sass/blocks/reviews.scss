@@ -76,6 +76,7 @@
 .reviews__item.swiper-slide {
   display: flex;
   flex-direction: column;
+  min-height: 472px;
   padding: 30px 15px 29px;
 
   border: 2px solid $color-main-basic;
@@ -83,11 +84,13 @@
 
   @media (min-width: $tablet-width) {
     width: 560px;
+    min-height: 417px;
     padding: 50px 52px 50px 50px;
   }
 
   @media (min-width: $desktop-width) {
     width: 604px;
+    min-height: 483px;
     padding: 50px 47px 49px 50px;
   }
 }
@@ -165,6 +168,7 @@
 
 .reviews__info {
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
 
   gap: 25px;

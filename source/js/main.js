@@ -1,4 +1,5 @@
 import { menuOpen } from './modules/menu-open';
+import { initNavFooter } from './modules/init-nav-footer';
 import { initNavigationToggle } from './modules/init-navigation-toggle';
 import { initHeroSlider } from './modules/init-hero-slider';
 import { initProgramsSlider } from './modules/init-program-slider';
@@ -11,6 +12,7 @@ import { validateForm } from './modules/form-validate';
 
 window.addEventListener('DOMContentLoaded', () => {
   menuOpen();
+  initNavFooter();
   initialAccordion();
   initNavigationToggle();
   initHeroSlider();
