@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
+  "homepage": "https://github.com/RitaRamilevna/internship",
   "scripts": {
     "dev": "vite --host --open",
     "test": "backstop test --config=pp.config.cjs",
@@ -17,7 +18,8 @@
     "stylelint": "stylelint \"source/sass/**/*.scss\" --fix",
     "lint-js": "eslint source/js --fix",
     "ls-lint": "ls-lint",
-    "editorconfig": "editorconfig-cli"
+    "editorconfig": "editorconfig-cli",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "3.0.0",
@@ -29,6 +31,7 @@
     "cli-progress": "3.12.0",
     "eslint": "8.57.0",
     "eslint-config-htmlacademy": "10.0.1",
+    "gh-pages": "6.3.0",
     "glob": "10.3.10",
     "gulp-html-bemlinter": "3.0.1",
     "html-validate": "8.18.1",
